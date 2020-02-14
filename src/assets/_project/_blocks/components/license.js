@@ -123,11 +123,11 @@
       // if we have licence details…
       if (licence) {
         $('.qg-content-footer').append(
-        '<p id="document-licence">' +
+          '<p id="document-licence">' +
           '<a rel="license" href="' + licence.url + licence.version.urlPath + '" title="Text available under Creative Commons ' + licence.name + ' ' + licence.version.title + ' licence">' +
           '<img src="' + licence.imgPath + '" alt="Creative Commons ' + licence.name + ' ' + licence.version.title + '" />' +
           '</a>' +
-          '</p>'
+          '</p>',
         );
       }
     });

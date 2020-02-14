@@ -26,13 +26,15 @@ module.exports = function (includeSrc, src, dest, exclude) {
     return false;
   }, function (err, list) {
     if (err) return;
-    list.files.forEach(function (file) {  //iterates through list of filtered files
+    list.files.forEach(function (file) {
+      //iterates through list of filtered files
       ssi.compileFile(file, function (err, content) {
         if (err) {
           console.error(err);
           return;
         }
-        var buildFile = file.replace(folder.src, folder.build);  //builds destination filepath
+        //builds destination filepath
+        var buildFile = file.replace(folder.src, folder.build);
         fsPath.writeFile(buildFile, content, function (err) {
           if (err) {
             console.error(err);

@@ -17,7 +17,7 @@ const socialLinksList = {
     { title: 'LinkedIn', showTitle: false, icon: renderIcon('fa', 'linkedin') },
     { title: 'Others', showTitle: false, icon: renderIcon('fa', 'share-alt') },
   ],
- /* secondary: [
+  /* secondary: [
     // {title: 'Delicious',    showTitle: true, icon: renderIcon('fa', 'delicious')},
     { title: "Digg", showTitle: true, icon: renderIcon("fa", "digg") },
     // {title: 'Evernote',     showTitle: true, icon: renderIcon('svg', 'evernote', '/assets/v3/images/evernote-logo-white.svg')},

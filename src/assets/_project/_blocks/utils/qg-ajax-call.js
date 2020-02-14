@@ -12,7 +12,7 @@
       success: callback,
       error: () => {
         console.log(errorMsg);
-      }
+      },
     });
   };
 }(jQuery, qg.swe));

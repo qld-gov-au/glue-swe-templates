@@ -18,8 +18,7 @@ module.exports = function (gulp, plugins, connect, connectssi, argv, path, rando
       });
     };
     if (argv.root === 'release') {
-      connectServer(root, 'template-local', argv.port);
-      connectServer(root, 'docs', argv.port + 1);
+      connectServer(root, 'docs', argv.port);
     } else {
       connectServer(root);
     }

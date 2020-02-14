@@ -44,7 +44,7 @@ const gitFunctions = {
   },
   updateVersion: (folder, version) => {
     return (cb) => {
-      return gulp.src(path.resolve(folder, 'package.json'))
+      return gulp.src(path.resolve(folder, 'package.json'), {allowEmpty: true})
         .pipe(replace(/"version": "\d+.\d+.\d+"/, '"version": "' + version + '"'))
         .pipe(gulp.dest(path.resolve(folder)));
     };

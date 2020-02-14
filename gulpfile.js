@@ -11,7 +11,6 @@ const webpack         = require('webpack');
 const argv            = require('yargs').argv;
 const plugins         = require('gulp-load-plugins')();
 const es              = require('event-stream');
-const runSequence     = require('run-sequence');
 const path            = require('path');
 const addSrc          = require('gulp-add-src');
 
@@ -31,7 +30,7 @@ const buildHours = (buildDate.getHours() + 1) < 10 ? '0' + (buildDate.getHours()
 const buildMinutes = buildDate.getMinutes() < 10 ? '0' + buildDate.getMinutes() : buildDate.getMinutes();
 const banner = '/*! SWE' +
     ' ' + pjson.version +
-    ' ' + buildDate.getFullYear() + buildMonth + buildDay + 'T' + buildHours + buildMinutes +	' */' +
+    ' ' + buildDate.getFullYear() + buildMonth + buildDay + 'T' + buildHours + buildMinutes + ' */' +
     '\n';
 
 /* CLEAN TASKS */
@@ -60,55 +59,15 @@ let assetDests = ['assets', 'docs/assets'];
 gulp.task('scss', require('./gulp/common-tasks/scss')(gulp, plugins, config, assetDests, addSrc));
 gulp.task('js', require('./gulp/common-tasks/js')(gulp, plugins, config, gulpWebpack, assetDests));
 
-gulp.task('other-assets', ['other-assets-root', 'other-assets-docs']);
 gulp.task('other-assets-root', require('./gulp/build-tasks/other-assets')(gulp, plugins, config, es, assetDests[0]));
 gulp.task('other-assets-docs', require('./gulp/build-tasks/other-assets')(gulp, plugins, config, es, assetDests[1]));
+gulp.task('other-assets', gulp.series('other-assets-root', 'other-assets-docs'));
 
 gulp.task('build-other-files', require('./gulp/build-tasks/other-files')(gulp, plugins, config));
 
 gulp.task('assets-includes-local', require('./gulp/build-tasks/assets-includes')(gulp, plugins, config, 'assets/includes-local', true));
 gulp.task('assets-includes-docs', require('./gulp/build-tasks/assets-includes')(gulp, plugins, config, 'docs/assets/includes-local', true, true));
 gulp.task('assets-includes-cdn', require('./gulp/build-tasks/assets-includes')(gulp, plugins, config, 'assets/includes-cdn'));
-
-gulp.task('build', (cb) => {
-  runSequence(
-      'test:eslint',
-      'assets-includes-docs',
-      'assets-includes-cdn',
-      'assets-includes-local',
-      'template-pages',
-      'js',
-      'scss',
-      'other-assets',
-      'build-other-files',
-      'template-pages-docs',
-      'template-pages-to-docs',
-      cb
-  );
-});
-
-gulp.task('default', ['build']);
-
-/* WATCH TASKS */
-// Note: External libraries and external modules are not watched
-gulp.task('watch:project', function () {
-  gulp.watch([`${config.basepath.src}/assets/_project/_blocks/layout/**/*.html`], ['assets-includes-local', 'assets-includes-docs']);
-  gulp.watch([`${config.basepath.src}/assets/_project/**/*.scss`], ['scss']);
-  gulp.watch(`${config.basepath.src}/assets/_project/_blocks/**/*.js`, { verbose: true }, ['js', 'test:eslint']);
-  gulp.watch(`${config.basepath.src}/assets/_project/lib/**/*.js`, { verbose: true }, ['other-assets']);
-  gulp.watch([`${config.basepath.src}/assets/_project/images/**/*`], ['other-assets']);
-  gulp.watch([`${config.basepath.src}/template-pages/**/*`], ['template-pages', 'template-pages-to-docs']);
-  gulp.watch([`${config.basepath.src}/_other-files/**/*`], ['build-other-files']);
-});
-
-gulp.task('watch:docs', function () {
-  gulp.watch([config.basepath.src + '/docs/**/*.html'], ['template-pages-docs', 'assets-includes-docs', 'template-pages-to-docs']);
-  gulp.on('stop', () => {
-    return plugins.shell(['node gulp/build-tasks/node-docs-flatten.js && gulp clean-redundant-build']);
-  });
-});
-gulp.task('watch:serve', ['watch', 'serve']);
-gulp.task('watch', ['watch:project', 'watch:docs', 'serve']);
 
 /* RELEASE TASKS */
 // Grabs SCSS from SRC and moves to release, does not process
@@ -117,15 +76,12 @@ gulp.task('release-other-files', require('./gulp/release-tasks/other-files')(gul
 gulp.task('replace-links', require('./gulp/release-tasks/replace-links')(gulp, plugins, es, config));
 gulp.task('release-files', require('./gulp/release-tasks/files')(gulp, plugins, config, es, webpack, path, banner));
 
-gulp.task('release', (cb) => {
-  return runSequence(
-    [
-      'release-files',
-      'scss-src',
-      'release-other-files',
-    ],
-      cb
-  );
+gulp.task('release', gulp.series(
+  'release-files',
+  'scss-src',
+  'release-other-files',
+), function (done) {
+  done();
 });
 
 /* LOCAL SERVER */
@@ -135,6 +91,24 @@ gulp.task('serve', require('./gulp/build-tasks/serve')(gulp, plugins, connect, c
 /* TEST TASKS */
 gulp.task('test:eslint', require('./gulp/test-tasks/lint')(gulp, plugins, config, fsPath, eslintReporter));
 
+/* Build task  */
+gulp.task('build', gulp.series(
+  'test:eslint',
+  'assets-includes-docs',
+  'assets-includes-cdn',
+  'assets-includes-local',
+  'template-pages',
+  'js',
+  'scss',
+  'other-assets',
+  'build-other-files',
+  'template-pages-docs',
+  'template-pages-to-docs',
+), function (done) {
+  done();
+});
+
+gulp.task('default', gulp.series('build'));
 /* PUBLISH TASKS */
 
 // web template release
@@ -161,4 +135,28 @@ gulp.task('swe-add', require('./gulp/publish-tasks/git').add());
 gulp.task('swe-commit', require('./gulp/publish-tasks/git').commit('./', pjson['wt-version']));
 gulp.task('swe-push', require('./gulp/publish-tasks/git').push('./'));
 gulp.task('swe-tag', require('./gulp/publish-tasks/git').tag('./', pjson['wt-version']));
+
+/* WATCH TASKS */
+// Note: External libraries and external modules are not watched
+gulp.task('watch:project', function (done) {
+  gulp.watch([`${config.basepath.src}/assets/_project/_blocks/layout/**/*.html`], gulp.series('assets-includes-local', 'assets-includes-docs'));
+  gulp.watch([`${config.basepath.src}/assets/_project/**/*.scss`], gulp.series('scss'));
+  gulp.watch(`${config.basepath.src}/assets/_project/_blocks/**/*.js`, { verbose: true }, gulp.series('js', 'test:eslint'));
+  gulp.watch(`${config.basepath.src}/assets/_project/lib/**/*.js`, { verbose: true }, gulp.series('other-assets'));
+  gulp.watch([`${config.basepath.src}/assets/_project/images/**/*`], gulp.series('other-assets'));
+  gulp.watch([`${config.basepath.src}/template-pages/**/*`], gulp.series('template-pages', 'template-pages-to-docs'));
+  gulp.watch([`${config.basepath.src}/_other-files/**/*`], gulp.series('build-other-files'));
+  done();
+});
+
+gulp.task('watch:docs', function (done) {
+  gulp.watch([config.basepath.src + '/docs/**/*.html'], gulp.series('template-pages-docs', 'assets-includes-docs', 'template-pages-to-docs'));
+  gulp.on('stop', () => {
+    return plugins.shell(['node gulp/build-tasks/node-docs-flatten.js && gulp clean-redundant-build']);
+  });
+  done();
+});
+
+gulp.task('watch', gulp.series('watch:project', 'watch:docs', 'serve'));
+gulp.task('watch:serve', gulp.series('watch', 'serve'));
 

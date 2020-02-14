@@ -7,7 +7,7 @@
    * @param {string} url - url where searching needs to be performed
    * @returns {*} - returns the parameter value
    */
-  // TODO - feature addition to sanitize data
+  // needs - feature addition to sanitize data
   swe.getParameterByName = (name, url) => {
     if (name == null) return false;
     if (!url) url = window.location.href;

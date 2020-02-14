@@ -15,7 +15,9 @@ import keys from '../../data/qg-google-keys';
   if ($feedbackForm.length > 0) {
     let setUrlEnableCaptcha = () => {
       // if environment is not PROD then use test submission handler link
-      checkEnv !== -1 ? $feedbackForm.attr('action', 'https://test.smartservice.qld.gov.au/services/submissions/email/feedback/feedback') : '';
+      if (checkEnv !== -1) {
+        $feedbackForm.attr('action', 'https://test.smartservice.qld.gov.au/services/submissions/email/feedback/feedback');
+      }
       // if data-recaptcha attribute is not present then insert it
       if ($feedbackForm.attr('data-recaptcha') === undefined) {
         $feedbackForm.attr('data-recaptcha', 'true');
@@ -130,8 +132,8 @@ import keys from '../../data/qg-google-keys';
         swe.ajaxCall(
           'https://www.google.com/recaptcha/api.js?render=' + manualSitekey,
           'script',
-           onloadRecaptcha,
-          'Recaptcha unavailable'
+          onloadRecaptcha,
+          'Recaptcha unavailable',
         );
       } else if (manualSitekey === undefined && manualAction !== undefined) {
         requireDefaultKey = true;
@@ -141,7 +143,7 @@ import keys from '../../data/qg-google-keys';
             'https://www.google.com/recaptcha/api.js',
             'script',
             onloadRecaptcha,
-            'Recaptcha unavailable'
+            'Recaptcha unavailable',
           );
           v2Loaded = true;
         }
@@ -149,14 +151,14 @@ import keys from '../../data/qg-google-keys';
     });
     //As v3 key is used in footer and could also be used on the page with a differnt action, we need to ensure we only load it once
     if (requireDefaultKey) {
-        //load right away
-        swe.ajaxCall(
-          'https://www.google.com/recaptcha/api.js?render=' + footerFeedbackGoogleRecaptchaApiKey,
-          'script',
-          onloadRecaptcha,
-          'Recaptcha unavailable'
-        );
-      } else {
+      //load right away
+      swe.ajaxCall(
+        'https://www.google.com/recaptcha/api.js?render=' + footerFeedbackGoogleRecaptchaApiKey,
+        'script',
+        onloadRecaptcha,
+        'Recaptcha unavailable',
+      );
+    } else {
       if (loadFooter) {
         //Only load if the feedback button is clicked
         $('#page-feedback-useful').one('click', function () {
@@ -164,7 +166,7 @@ import keys from '../../data/qg-google-keys';
             'https://www.google.com/recaptcha/api.js?render=' + footerFeedbackGoogleRecaptchaApiKey,
             'script',
             onloadRecaptcha,
-            'Recaptcha unavailable'
+            'Recaptcha unavailable',
           );
         });
       }

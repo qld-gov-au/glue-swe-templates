@@ -1,5 +1,5 @@
 'use strict';
-// TODO handle any types of data inside the template pages folder
+// needs handle any types of data inside the template pages folder
 module.exports = function (gulp, plugins, config, src, dest, type = 'cdn') {
   return function (cb) {
     const target = [

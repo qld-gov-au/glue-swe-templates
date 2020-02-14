@@ -12,3 +12,4 @@ let exclude = [];
 
 ssiToStatic(includeSrc, src, dest, exclude);
 
+ssiToStatic(path.join('build'), path.join('build', 'template-pages'), path.join('build', 'template-pages'), []);

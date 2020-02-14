@@ -1,4 +1,4 @@
-/*global qg, jQuery, google*/
+/*global qg, google*/
 let qgInitAutocompleteAddress;
 
 (function (qg, $) {
@@ -19,11 +19,15 @@ let qgInitAutocompleteAddress;
     el.$form.find(':input:not(:checkbox):not(:radio), select, textarea').each(function () {
       let name = $(this).attr('name');
       let getParameterVal = qg.swe.getParameterByName($(this).attr('name'));
-      getParameterVal !== false ? $('[name="' + name + '"]').val(getParameterVal) : '';
+      if (getParameterVal !== false) {
+        $('[name="' + name + '"]').val(getParameterVal);
+      }
     }).end().find('input[type=checkbox], input[type=radio]').each(function () {
       let name = $(this).attr('name');
       let getParameterVal = qg.swe.getParameterByName(name);
-      getParameterVal !== false ? $('[value="' + getParameterVal + '"]').prop('checked', true) : '';
+      if (getParameterVal !== false) {
+        $('[value="' + getParameterVal + '"]').prop('checked', true);
+      }
     });
   };
   setsValue();

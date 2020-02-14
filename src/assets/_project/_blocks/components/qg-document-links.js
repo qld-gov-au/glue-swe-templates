@@ -15,7 +15,9 @@
           // check to see if decimals exist, if yes then round then off
           // Example (PDF 106.66) -> (PDF 106)
           let extractSize = new RegExp('\\((?:' + contentType.toUpperCase() + '),?\\s+[0-9\\.]+\\s*[KM]B\\)', 'i');
-          currContent.match(extractSize) ? $(this).find('.meta').empty().append(currContent.match(extractSize)[0].toUpperCase().replace(/(\.\d*)/gi, '')) : '';
+          if (currContent.match(extractSize)) {
+            $(this).find('.meta').empty().append(currContent.match(extractSize)[0].toUpperCase().replace(/(\.\d*)/gi, ''))
+          }
         } else if (!contentRegex.test(currContent)) {
           // check to see there is no doc type present in the content section
           // If yes then insert <span class="meta">PDF</span>
