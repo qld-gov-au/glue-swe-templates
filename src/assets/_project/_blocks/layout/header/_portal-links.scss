@@ -1,0 +1,219 @@
+@mixin portal-link-hover() {
+    background-color: $qg-global-dark-grey-active;
+    text-decoration: underline;
+}
+
+.qg-portal-links {
+    background-color: $qg-dark-grey-dark;
+    order: 1;
+
+    .navbar {
+        display: flex;
+        padding: 0;
+        align-items: center;
+
+        .navbar-collapse {
+            justify-content: flex-end;
+        }
+    }
+
+    .qg-portal-links__list {
+        list-style: none;
+        margin: 0 -25px;
+        padding: 0;
+        display: flex;
+
+        .nav-link {
+            color: #fff;
+            padding: 10px 20px 10px 15px;
+            text-decoration: none;
+
+            &:hover,&:focus {
+                @include portal-link-hover();
+                position: relative;
+                z-index: 2;
+            }
+        }
+    }
+
+    .qg-portal-links__btn {
+        background-color: $qg-dark-grey-dark;
+        border: none;
+        color: #fff;
+        padding: 10px 20px 10px 15px;
+
+        &:after {
+            margin-left: 8px;
+        }
+
+        &:hover,&:focus,
+        &[aria-expanded="true"] {
+            @include portal-link-hover();
+            z-index: 2;
+            position: relative;
+        }
+    }
+
+    .dropdown-menu {
+        background-color: $qg-global-dark-grey-active;
+        border: 0;
+        border-radius: 0 0 4px 4px;
+        box-shadow: 0 4px 6px 0 rgba(32, 33, 36, 0.47);
+        display: block;
+        opacity: 0;
+        padding: 0;
+        margin: 0;
+        width: 327px;
+        visibility: hidden;
+        transition: opacity .3s ease, visibility 0s ease .3s;
+
+        &.show {
+            transition: opacity 0.3s linear;
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+
+    .qg-dropdown-wrapper {
+        padding: 13px 35px;
+    }
+
+    .dropdown-item {
+        color: #fff;
+        padding: 13px 0;
+        white-space: normal;
+        @include css-chevron-inline-right(6px, #fff, 21px, before, 26px);
+
+        &:hover,&:focus {
+            @include portal-link-hover();
+        }
+
+        &:last-child {
+            padding-left: 0;
+            text-decoration: underline;
+
+            &:after {
+                border: none;
+            }
+        }
+    }
+
+    @include media-breakpoint-up(md) {
+        .nav-item {
+            max-height: 44px;
+        }
+
+        .dropdown-menu {
+            height: 0;
+            overflow: hidden;
+
+            &.show {
+                height: auto;
+            }
+        }
+    }
+
+    @include media-breakpoint-down(sm) {
+        background-color: transparent;
+        order: 2;
+
+        .container-fluid {
+            padding: 0;
+        }
+
+        .navbar {
+            .navbar-collapse {
+                justify-content: center;
+            }
+
+            .dropdown-menu {
+                background-color: $qg-global-dark-grey-dark-active;
+                display: block;
+                position: relative;
+                max-height: 0;
+                opacity: 1;
+                overflow: hidden;
+                padding: 0;
+                transition: max-height 0.3s ease;
+                width: 100%;
+            }
+        }
+
+        .qg-portal-links__list {
+            background-color: $qg-dark-grey-dark;
+            border-radius: 4px;
+            box-shadow: none;
+            display: block;
+            overflow: hidden;
+            margin: 0 25px;
+            width: 100%;
+        }
+
+        .nav-item {
+            border-bottom: 1px solid #000;
+    
+            &:last-child {
+                border-bottom: none;
+            }
+        }
+
+        .qg-portal-links__btn {
+            text-align: left;
+            width: 100%;
+
+            &:after {
+                border: none;
+            }
+
+            @include css-chevron-inline-down(6px, #fff, 20px);
+
+            &:hover,&:focus,
+            &[aria-expanded="true"] {
+                text-decoration: underline;
+            }
+
+            &:focus {
+                outline-offset: -3px;
+            }
+
+            &[aria-expanded="true"] {
+                &:after {
+                    transform: translateY(-50%) rotate(135deg);
+                }
+
+                + .dropdown-menu {
+                    max-height: 735px;
+                }
+            }
+        }
+
+        .qg-dropdown-wrapper {
+            padding: 0;
+        }
+
+        .dropdown-item {
+            border-bottom: 1px solid #000;
+            padding: 10px 23px;
+            line-height: 22px;
+
+            &:after {
+                border: none;
+            }
+
+            &:last-child {
+                border-bottom: none;
+                padding-left: 23px;
+            }
+        }
+    }
+
+    @include media-breakpoint-down(xs) {
+        ul {
+            margin: 0 10px;
+        }
+
+        .qg-portal-links__list {
+            margin: 0 10px;
+        }
+    }
+}

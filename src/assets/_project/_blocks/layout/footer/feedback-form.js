@@ -1,4 +1,40 @@
 /**
+* AJAX feedback form submission
+**/
+
+$('.no-js').removeClass('no-js');
+
+$('#qg-page-feedback-form').submit(function (event) {
+  event.preventDefault();
+  var postUrl = $(this).attr('action');
+  var requestMethod = $(this).attr('method');
+  var formData = new FormData(this);
+  $.ajax({
+    url: postUrl,
+    type: requestMethod,
+    data: formData,
+    contentType: false,
+    cache: false,
+    processData: false
+  }).done(function (response) {
+    $('.qg-footer-feedback .thankyou').removeClass('d-none');
+    $('#qg-page-feedback-form, .qg-feedback-toggle').addClass('d-none');
+    var thankyou = $.parseHTML(response);
+    $('.qg-footer-feedback .thankyou').append(thankyou);
+    });
+});
+
+$('.qg-footer-feedback__close').click(function () {
+  $('.qg-feedback-toggle').removeClass('d-none');
+});
+
+$('.qg-feedback-toggle').click(function () {
+  if ($('#qg-page-feedback-form').hasClass('d-none')) {
+    $(this).addClass('d-none');
+  }
+});
+
+/**
 * Adds page and user details to hidden inputs on the feedback form
 **/
 

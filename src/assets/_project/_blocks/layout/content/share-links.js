@@ -12,10 +12,9 @@
 
 const socialLinksList = {
   primary: [
-    { title: 'Facebook', showTitle: false, icon: renderIcon('fa', 'facebook') },
-    { title: 'Twitter', showTitle: false, icon: renderIcon('fa', 'twitter') },
-    { title: 'LinkedIn', showTitle: false, icon: renderIcon('fa', 'linkedin') },
-    { title: 'Others', showTitle: false, icon: renderIcon('fa', 'share-alt') },
+    { title: 'Facebook', showTitle: false, icon: renderIcon('fa', 'facebook-square'), ga: 'data-analytics-link-group="qg-sharing-facebook"' },
+    { title: 'Twitter', showTitle: false, icon: renderIcon('fa', 'twitter-square'), ga: 'data-analytics-link-group="qg-sharing-twitter"' },
+    { title: 'LinkedIn', showTitle: false, icon: renderIcon('fa', 'linkedin-square'), ga: 'data-analytics-link-group="qg-sharing-linkedin"' }
   ],
  /* secondary: [
     // {title: 'Delicious',    showTitle: true, icon: renderIcon('fa', 'delicious')},
@@ -38,7 +37,7 @@ function renderSocialURL (who, from, title, domain, description) {
   case 'facebook':
     return `http://www.facebook.com/share.php?u=${from}&title=${title}`;
   case 'twitter':
-    return `http://twitter.com/home?status=${title}+${from}`;
+    return `http://twitter.com/share?url=${from}`;
   case 'linkedin':
     return `http://www.linkedin.com/shareArticle?mini=true&url=${from}&title=${title}&source=${domain}`;
   case 'others':
@@ -76,15 +75,15 @@ function renderHidden () {
   return 'qg-visually-hidden';
 }
 
-function renderLink (url, title, icon, hidden = '') {
-  return `<li>
-            <a class="qg-share-link qg-accessibility-off" href="${url}" title="${title}">${icon}<span class="title ${hidden}"">${title}</span></a>
+function renderLink (url, title, icon, ga, hidden = '') {
+  return `<li class="qg-share-list-item">
+            <a class="qg-share-link qg-accessibility-off" href="${url}" title="${title}" ${ga} >${icon}<span class="title ${hidden}"">${title}</span></a>
           </li>`;
 }
 
 function renderShareButtons () {
-  return `<h2>Share:</h2>
-  <ul class="navbar navbar-right">
+  return `<span class="navbar-brand qg-share__title">Share this page:</span>
+  <ul class="navbar navbar-right qg-share-list">
     ${getLinks('primary')}
    </ul>`;
 }
@@ -113,7 +112,7 @@ function getLinks (type) {
     if (entry.showTitle !== true) {
       hidden = renderHidden();
     }
-    str = str + renderLink(url, entry.title, entry.icon, hidden);
+    str = str + renderLink(url, entry.title, entry.icon, entry.ga, hidden);
   }
   return str;
 }

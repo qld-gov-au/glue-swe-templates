@@ -1,0 +1,147 @@
+.qg-index-links {
+  @extend .d-flex;
+  @extend .flex-wrap;
+  .qg-index-item.content-only{
+    h2, p, ul, &> div &> span {
+      padding-left: 10px;
+    }
+  }
+
+  &> .qg-index-item {
+    @include make-col-ready();
+    @include make-col(12);
+    margin-bottom: $qg-spacing;
+    word-wrap: break-word;
+    img {
+      width: 75px;
+      height: 75px;
+      float: left;
+    }
+    a {
+      &:hover {
+        img {
+          border: 1px solid #06c;
+        }
+      }
+      img {
+        position: absolute;
+        left: 25px;
+        background: #f9f9f9;
+        border: 1px solid #fffefc;
+        box-shadow: 0 0 2px 1px rgba(0,0,0,.1);
+      }
+
+    }
+    ul:not(.qg-unstyled) {
+      li {
+        position: relative;
+        padding-left: 1em;
+        list-style: none;
+        @include rem(line-height, 24px);
+        a {
+          color: $qg-blue-dark;
+          &:active, &:hover, &:focus {
+            color: $qg-blue-dark;
+          }
+          &:before {
+            position: absolute;
+            left: 0;
+            top: 0.46rem;
+            font-family: FontAwesome;
+            font-size: 0.7rem;
+            line-height: 1;
+            padding-right: .8rem;
+            content: "\f054";
+          }
+        }
+
+      }
+
+    }
+    h2, p, ul, &> div &> span {
+      padding-left: ($qg-spacing / 2) + 75px;
+    }
+    h2 {
+      margin-top: 0;
+      @include rem(font-size, 19px);
+    }
+    & > ul:not(.qg-unstyled) {
+      list-style: none;
+    }
+  }
+  @include breakpoint(xs) {
+    margin-right: 0;
+    margin-left: 0;
+    &> .qg-index-item{
+      //width: 100%;
+      margin-bottom: 10px;
+      background: $qg-blue-green;
+      padding-left: 0 !important;
+      padding-right: 0 !important;
+    }
+    h2 {
+      padding: 0 !important;
+      margin-bottom: 0;
+      a {
+        padding: 1em 1.5em 1em 1.5em !important;
+        display: block;
+        color: #ffffff !important;
+      }
+      a:visited, a:active{
+        color: #ffffff !important;
+      }
+      a:hover {
+        background: #007eb1;
+        color: #ffffff !important;
+        text-decoration: none !important;
+      }
+      img {
+        display: none;
+      }
+    }
+    p,ul{
+      display: none;
+    }
+  }
+}
+
+// Stops problems with bootstrap flowing of elements
+@mixin qg-index-item {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+// Legacy stuff
+#qg-one-col, #qg-three-col, #qg-two-col-aside:not(.wide), #qg-two-col-nav:not(.wide) {
+  .qg-index-links > .qg-index-item {
+    @include media-breakpoint-up(sm) {
+      @include make-col(6);
+    }
+    &:nth-child(3) {
+      @include qg-index-item;
+    }
+  }
+}
+
+#qg-one-col.wide {
+  .qg-index-links > .qg-index-item {
+    @include media-breakpoint-up(sm) {
+      @include make-col(3);
+    }
+    &:nth-child(5) {
+      @include qg-index-item;
+    }
+  }
+}
+
+#qg-two-col-aside.wide, #qg-two-col-nav.wide {
+  .qg-index-links > .qg-index-item {
+    @include media-breakpoint-up(sm) {
+      @include make-col(4);
+    }
+    &:nth-child(4) {
+      @include qg-index-item;
+    }
+  }
+}

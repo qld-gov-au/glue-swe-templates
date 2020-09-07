@@ -1,0 +1,12 @@
+#qg-site-name {
+  //@extend .col-lg-12;
+  //@extend .col-md-12;
+  //@extend .col-sm-12;
+  //@extend .col-xs-12;
+
+  background-color: $gray-base; // $qg-banner-blue
+
+  h2 {
+    margin: .3em 0;
+  }
+}

@@ -1,0 +1,37 @@
+/**
+ * jquery.butterfly.js
+ * @version 0.10
+ * @see http://irama.org/web/dhtml/butterfly/
+ * @license GNU GENERAL PUBLIC LICENSE (GPL) <http://www.gnu.org/licenses/gpl.html>
+ */
+ /* butterfly lightbox IE6 hacks */
+	* html #jb-overlay {
+		position: absolute !important;
+		top: expression(eval(document.documentElement.scrollTop));
+		height: expression(eval(document.documentElement.clientHeight) + 'px');
+		filter: alpha(opacity = 70);
+	}
+	* html #jb-window {
+		position: absolute;
+		top: expression(eval(document.documentElement.scrollTop));
+		height: expression(eval(document.documentElement.clientHeight) + 'px');
+	}
+	* html #jb-window.reactive {
+		background-image: url(../images/skin/reactive-overlay.gif);
+	}
+	* html #jb-window-inner {
+		margin-top: expression( (( this.parentNode.clientHeight - this.clientHeight ) / 2 ) + "px" );
+		margin-left: auto;
+		margin-right: auto;
+		overflow: auto !important;
+	}
+	* html #jb-window-content {
+		overflow: hidden;
+	}
+
+
+	/* IE6 Fixed Position Jitter Fix */
+	* html {
+		background-image: url(about:blank);
+		background-attachment: fixed;
+	}

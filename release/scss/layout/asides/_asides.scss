@@ -1,0 +1,113 @@
+//// asides ////
+@import 'minicart';
+#qg-content #qg-secondary-content {
+  position: relative;
+
+  .qg-aside {
+    border-bottom: 1px solid #e1ecf1;
+    @include rem(font-size, 14.4px);
+    color: #4d4d4d;
+    @include qg-responsive-spacing(padding);
+
+    margin: 0;
+    background-color: #f2f7f9;
+
+    &:last-child{
+      border-bottom: none;
+    }
+    &:first-child {
+      @include qg-responsive-spacing(padding-top, full);
+    }
+
+    .container{
+      width:100%;
+      padding-left: 0;
+      padding-right: 0;
+      iframe {
+        width: 100%;
+      }
+    }
+
+    h2 {
+      margin-top: 0;
+      overflow: hidden;
+      color: $qg-aside-h2-color;
+      @include rem(font-size, 22px);
+      font-weight: bold;
+
+      .fa {
+        padding-right: .3em;
+
+        color: $qg-icon-color;
+        font-size: 1.3em;
+      }
+
+    }
+    h3 {
+      color: $qg-dark-blue2;
+    }
+    p:last-child {
+      margin-bottom: 0;
+    }
+    ul {
+      // Check in other patterns to see this padding is of no use
+      //padding-left: 1.5em;
+    }
+
+    .tel {
+      font-weight: 800;
+      white-space: nowrap;
+    }
+    &.qg-featured {
+      .news-items {
+        h3 {
+          font-size: 1.2em;
+        }
+      }
+    }
+    &.qg-contact {
+      background: #e7f5fe;
+      ul {
+        li {
+          word-wrap: break-word;
+          .tel {
+            color: $qg-dark-grey;
+            @include rem(font-size, 14px);
+          }
+        }
+      }
+    }
+    &.qg-emergency-contact {
+      background: #ffdea6;
+      .fa {
+        float:left;
+        font-size: 1.9em;
+        color: #a60000;
+        margin-right: 0.4em;
+      }
+      p {
+        span a{
+          font-size: 1.5em;
+          margin-left: 10px;
+        }
+      }
+    }
+    &.login {
+      h2:before {
+        content: $fa-var-sign-in;
+        font-family: FontAwesome;
+        color: $qg-green;
+        //font-size: 3.2rem;
+        @include rem(font-size, 32px);
+        font-weight: normal;
+        padding-right: 1.2rem;
+      }
+    }
+    .actions {
+      list-style: none;
+      padding: .5rem 0 0;
+    }
+
+  }
+}
+

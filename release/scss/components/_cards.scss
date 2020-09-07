@@ -1,0 +1,94 @@
+.qg-cards {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  &:before, &:after {
+    content: normal;
+  }
+  .qg-card {
+    @extend .pr-3;
+    @extend .pl-3;
+    color: #FFFFFF;
+    margin-bottom: 2rem;
+    display: flex;
+    .content{
+      width: 100%;
+      background: #444444;
+      position: relative;
+      overflow: hidden;
+      img {
+        width: 100%;
+        height: auto;
+      }
+      .details{
+        padding: 1em;
+        a {
+          color: #fff;
+          text-decoration: underline;
+           &:hover, &:active, &:focus, &:visited{
+            color: #fff !important;
+            text-decoration: none !important;
+          }
+        }
+        ul {
+          padding: 0;
+          li {
+            position: relative;
+            padding-left: 1.6rem;
+            list-style: none;
+            margin: 0;
+            &:before {
+              font-family: FontAwesome;
+              font-style: normal;
+              font-weight: 400;
+              line-height: 1;
+              content: "\f054";
+              margin-right: .6rem;
+              font-size: 0.8rem;
+              position: absolute;
+              padding-right: .8rem;
+              left: 0;
+              top: .5rem;
+            }
+          }
+        }
+        a.btn, a.btn:visited, a.btn:focus{
+          color: inherit !important;
+          text-decoration: none !important;
+          &:hover {
+            background: rgba(0,126,177,.6) !important;
+          }
+        }
+      }
+      .btn {
+        background: #017eb1;
+        display: inline-block;
+        width: 100%;
+        color: #FFFFFF;
+        border: none;
+      }
+      @include breakpoint(sm) {
+        .qg-pin-bottom {
+          position: absolute;
+          bottom: 1em;
+          width: calc(95% - 1em);
+          box-sizing: border-box;
+        }
+      }
+      @include breakpoint(md) {
+        .qg-pin-bottom-md {
+          position: absolute;
+          bottom: 1em;
+          width: calc(94% - 1em);
+          box-sizing: border-box;
+        }
+      }
+      img {
+        width: 100%;
+        height: auto;
+        max-width: 699px;
+        display: block;
+      }
+    }
+  }
+}

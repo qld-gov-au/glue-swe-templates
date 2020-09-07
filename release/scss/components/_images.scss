@@ -1,0 +1,43 @@
+// ############
+// ## Images ##
+// ############
+
+// figures / cut ins
+
+#qg-primary-content figure:not(.qg-nofig), figure.qg-fig {
+  max-width: 374px !important;
+  max-height: auto !important;
+
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 1em;
+  text-align: center;
+
+  &:not(.qg-unstyled) {
+    border: 1px solid #EEE;
+    padding: .5em;
+  }
+
+  &.pull-right{
+    margin-left: 1em;
+  }
+  &.pull-left {
+    margin-right: 1em;
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+  }
+
+  figcaption {
+    @include rem(font-size, 14px);
+    text-align: left;
+    font-style: italic;
+    .figure-credits {
+      font-style: normal;
+      color: #757575;
+    }
+  }
+}

@@ -1,0 +1,43 @@
+
+// Over rides for bootstrap _labels.css
+form legend {
+	font-size: 1em;
+}
+form label {
+	display: block;
+	font-weight: normal;
+}
+form .label {
+	display: block;
+	padding: 0;
+
+	color: #000;
+	font-size: 1em;
+	line-height: 1.2em;
+	font-weight: normal;
+	text-align: left;
+	white-space: normal;
+}
+
+form .abbr {
+	cursor: pointer;
+}
+
+// Over rides input size
+
+input[type=text],
+input[type=password],
+input[type=search],
+input[type=email],
+input[type=tel],
+input[type=url],
+input[type=date],
+input[type=time],
+input[type=datetime],
+input[type=number],
+select,
+textarea,
+.form-control {
+	height: auto;
+}
+

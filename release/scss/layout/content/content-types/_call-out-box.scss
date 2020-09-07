@@ -1,0 +1,20 @@
+.qg-call-out-box {
+  background-color: $qg-box-background;
+  clear: both;
+  padding: 2em 1em;
+  width: 100%;
+  box-sizing: border-box;
+  margin: 1em auto;
+  overflow: hidden;
+  a.qg-btn {
+    float: left;
+    margin-right: 1em;
+    @include breakpoint($screen-sm-min) {
+      min-width: 8em;
+      margin-right: 2em;
+    }
+  }
+  p {
+    margin: 0;
+  }
+}

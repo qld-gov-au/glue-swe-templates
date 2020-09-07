@@ -1,0 +1,112 @@
+//custom theme for radio buttons and checkbox
+.rc-theme {
+  &.choices {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top:1em;
+  }
+  &.choices {
+    li {
+      width: 255px;
+      padding: 15px !important;
+      margin-bottom: 1rem;
+      margin-right: 2rem !important;
+      color: #000;
+      background-color: #fff;
+      border-radius: 3px;
+      border: 2px solid #000 !important;
+    }
+    label {
+      color: #000 !important;
+      font-weight: normal;
+    }
+  }
+  [type="radio"]:checked,
+  [type="checkbox"]:checked,
+  [type="radio"]:not(:checked),
+  [type="checkbox"]:not(:checked) {
+    position: absolute;
+    left: -9999px;
+  }
+  [type="radio"]:checked + label,
+  [type="checkbox"]:checked + label,
+  [type="radio"]:not(:checked) + label,
+  [type="checkbox"]:not(:checked) + label
+  {
+    position: relative;
+    padding-left: 34px;
+    cursor: pointer;
+    line-height: 20px;
+    display: inline-block;
+    color: #666;
+  }
+  [type="radio"]:checked + label:before,
+  [type="radio"]:not(:checked) + label:before{
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 22px;
+    height: 22px;
+    border: 1px solid #000;
+    border-radius: 100%;
+    background: #fff;
+  }
+
+  [type="checkbox"]:checked + label:before,
+  [type="checkbox"]:not(:checked) + label:before{
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 3px;
+    width: 22px;
+    height: 22px;
+    border: 1px solid #000;
+    background: #fff;
+  }
+  [type="radio"]:checked + label:after,
+  [type="radio"]:not(:checked) + label:after {
+    content: '';
+    width: 14px;
+    height: 14px;
+    background: #000;
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    border-radius: 100%;
+    transition: all 0.2s ease;
+  }
+
+  [type="checkbox"]:checked + label:after,
+  [type="checkbox"]:not(:checked) + label:after{
+    content: '\2714';
+    font-size: 22px;
+    position: absolute;
+    top: 4px;
+    left: 3px;
+    color: #000;
+    transition: all 0.2s ease;
+  }
+  [type="radio"]:not(:checked) + label:after,
+  [type="checkbox"]:not(:checked) + label:after{
+    opacity: 0;
+    -webkit-transform: scale(0);
+    transform: scale(0);
+  }
+  [type="radio"]:checked + label:after,
+  [type="checkbox"]:checked + label:after{
+    opacity: 1;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+  /** Button is active **/
+  li.active {
+    background-color: #007eb1 !important;
+    label{
+      color: #fff !important;
+    }
+  }
+}
+
+
+

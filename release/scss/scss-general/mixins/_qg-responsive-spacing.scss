@@ -1,0 +1,45 @@
+// Responsive spacing
+// QG addon to allow you to set dynamic padding or margins to elements based on the standard md break.
+
+// Settings
+@mixin qg-responsive-spacing ($prop, $scale: notset, $large: notset, $small: notset) {
+  $default-small: $qg-spacing-xs / 2;
+  $default-large: $qg-spacing / 2;
+
+  @if $scale != 'notset' AND $large == 'notset' AND $small == 'notset' {
+    $small: $scale;
+    $large: $scale;
+  } @else if $scale != 'notset' AND $large != 'notset' AND $small == 'notset' {
+    $small: $scale;
+  }
+  @if $small == notset {
+    $small: default;
+  }
+  @if $large == notset {
+    $large: default;
+  }
+
+  // Manipulate default / full variables
+  @if $small == default {
+    $small: $default-small;
+  } @else if $small == full {
+    $small: $default-small * 2;
+  }
+  @if $large == default {
+    $large: $default-large;
+  } @else if $large == full {
+    $large: $default-large * 2;
+  }
+
+  // The 'small' breakpoint is dynamic. In this case, it's the smallest size
+  @if $small != false {
+    #{$prop}: $small;
+  }
+
+  // The 'large' breakpoint is dynamic. In this case, on LG
+  @if $large != false {
+    @include media-breakpoint-up(lg) {
+      #{$prop}: $large;
+    }
+  }
+}

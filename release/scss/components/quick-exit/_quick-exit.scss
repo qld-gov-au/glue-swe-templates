@@ -1,0 +1,37 @@
+#qg-quick-exit {
+  text-align: center;
+  position: fixed;
+  top: 20%;
+  right: 0;
+  line-height: 1;
+  padding: .7em .5em .7em 1.25em;
+  white-space: nowrap;
+  cursor: pointer;
+  font-family: sans-serif;
+  font-weight: 700;
+  transform-origin: right center;
+  transition: all 15ms ease;
+  z-index: 99999;
+  background: #f7d418;
+  color: #000;
+  border: .4em solid #000;
+  border-right: none;
+  border-radius: 46% 0 0 46%;
+  box-shadow: 0 0 0 .2em #f7d418, 2px 2px 5px .2em rgba(0,0,0,.5);
+  text-transform: uppercase;
+  ul {
+    list-style-type: none;
+    margin: 0.4em 0 0.5em 0;
+    padding: 0;
+    text-align: center;
+  }
+  &:hover {
+    transform: scale(1.2);
+  }
+}
+
+@media print {
+  #qg-quick-exit{
+    display: none;
+  }
+}

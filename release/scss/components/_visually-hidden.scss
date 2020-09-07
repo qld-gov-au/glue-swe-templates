@@ -1,0 +1,67 @@
+// Avoid using these, as screen reader and standard user experience should be similar
+
+.qg-visually-hidden {
+  border: 0;
+  clip: rect(1px 1px 1px 1px);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+
+  * {
+    border: 0;
+  }
+}
+
+// Visually hidden
+.qg-visually-hidden-xs {
+  @media (max-width: $screen-xs-max) {
+    @extends .qg-visually-hidden;
+  }
+}
+.qg-visually-hidden-sm {
+  @media (min-width: $screen-sm-min) AND (max-width: $screen-sm-max) {
+    @extends .qg-visually-hidden;
+  }
+}
+.qg-visually-hidden-md {
+  @media (min-width: $screen-md-min) AND (max-width: $screen-md-max) {
+    @extends .qg-visually-hidden;
+  }
+}
+.qg-visually-hidden-lg {
+  @include media-breakpoint-up(lg) {
+    @extends .qg-visually-hidden;
+  }
+}
+
+// Visually shown
+.qg-visually-shown-xs {
+  @media (min-width: $screen-sm-min) {
+    @extends .qg-visually-hidden;
+  }
+}
+.qg-visually-shown-sm {
+  @media (max-width: $screen-xs-max) {
+    @extends .qg-visually-hidden;
+  }
+  @include media-breakpoint-up(md) {
+    @extends .qg-visually-hidden;
+  }
+}
+.qg-visually-shown-md {
+  @media (max-width: $screen-sm-max) {
+    @extends .qg-visually-hidden;
+  }
+  @include media-breakpoint-up(lg) {
+    @extends .qg-visually-hidden;
+  }
+}
+.qg-visually-shown-lg {
+  @media (max-width: $screen-md-max) {
+    @extends .qg-visually-hidden;
+  }
+}
+

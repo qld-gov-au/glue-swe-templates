@@ -229,7 +229,11 @@
           // show the new summary
           form.before( summary.fadeIn() );
           // focus/scroll summary element
-          $( window ).scrollTop( summary.offset().top );
+          if (window.innerWidth < 992) {
+            $( window ).scrollTop( summary.offset().top - $('.qg-site-header').height());
+          } else {
+            $( window ).scrollTop( summary.offset().top );
+          }
         }( form ));
 
         // find all the invalid fields

@@ -112,6 +112,8 @@
     "node-bourbon": "^4.2.8",
     "puppeteer-core": "^1.20.0",
     "replace-string": "^2.0.0",
-    "responsive-toolkit": "^2.6.3"
+    "responsive-toolkit": "^2.6.3",
+    "stickyfill": "^1.1.1-strict",
+    "yarn": "^1.22.0"
   }
 }

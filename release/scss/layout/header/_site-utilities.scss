@@ -1,0 +1,50 @@
+#qg-site-header .qg-utilities {
+  text-align: right;
+  @include rem(margin-top, 5px);
+
+  a, a:link, a:hover, a:focus {
+    color: $qg-blue5;
+    text-decoration: none;
+  }
+  @include breakpoint(md) {
+    a:hover {
+      text-decoration: underline;
+    }
+  }
+
+  li {
+    padding-right: 0;
+    padding-left: 0;
+    line-height: 1.75em;
+
+    button, a {
+      background-color: transparent;
+      padding: 0;
+      border: none;
+      vertical-align: middle;
+      display: inline-block;
+      text-align: center;
+
+      .fa {
+        display: block;
+      }
+      .fa-phone {
+        &:before {
+          vertical-align: middle;
+        }
+      }
+    }
+
+    & + li {
+      margin-left: 1em;
+    }
+  }
+
+  @include breakpoint(sm) {
+    text-align: right;
+  }
+
+  @media print {
+    display: none;
+  }
+}

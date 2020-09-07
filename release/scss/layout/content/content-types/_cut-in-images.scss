@@ -1,0 +1,41 @@
+.qg-cut-in, .qg-cut-in-alt {
+  position: relative;
+  @include rem(max-width, 374px);
+  @include rem(font-size, 14px);
+  @include rem(padding, 7px);
+  @include rem(margin, 17px 16px 14px 16px);
+  text-align: center;
+  font-style: italic;
+  border: 1px solid #eee;
+  img {
+    max-width: 100%!important;
+    height: auto!important;
+    margin: 0 auto;
+    display: block;
+  }
+  .figure-credits {
+    @include rem(padding, 0 20px);
+  }
+  .caption {
+    @include rem(max-width, 284px);
+    @include rem(margin, 6px auto);
+    text-align: left;
+    font-style: italic;
+  }
+  .figure-credits-toggle {
+    display: block;
+    position: absolute;
+    height: 30px;
+    top: 10px !important;
+    right: 10px !important;
+    text-align: right;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+}
+.qg-cut-in{
+ float: right;
+}
+.qg-cut-in-alt{
+  float: left;
+}

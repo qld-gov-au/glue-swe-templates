@@ -1,0 +1,10 @@
+.nav-tabs > li > a {
+  background: #585e62;
+  color: $qg-nav-tabs-inactive-link-color;
+
+  &:hover {
+    background: $qg-nav-tabs-link-hover-bg;
+    color: $qg-nav-tabs-link-hover-color;
+  }
+}
+

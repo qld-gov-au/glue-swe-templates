@@ -1,0 +1,144 @@
+.qg-site-footer {
+    background-color: $qg-global-primary-grey;
+    color: #fff;
+    padding-top: 8px;
+
+    .container-fluid {
+        padding: 0;
+    }
+
+    .btn {
+        margin-top: 20px;
+        width: 100%;
+
+        &:hover, &:focus {
+            opacity: 1;
+        }
+    }
+    
+    h3 {
+        @include rem(font-size, 20px);
+        font-weight: bold;
+        margin-bottom: 30px;
+
+        a {
+            color: #fff;
+            text-decoration: none;
+            transition: opacity .1s linear;
+
+            &:hover, &:focus {
+                text-decoration: underline;
+                color: $qg-global-primary-hover-grey;
+            }
+        }
+    }
+
+    p {
+        line-height: 20px;
+    }
+
+    .col {
+        flex-grow: 0;
+        padding: 0 0 0 15px;
+    }
+
+    .qg-footer-col-content {
+        max-width: 270px
+    }
+
+    hr {
+        margin: 30px 0;
+        border-color: rgba(255,255,255,0.25);
+    }
+
+    ul {
+        list-style: none;
+        padding: 0;
+        margin: 5px 0;
+
+        li {
+            margin-top: 5px;
+
+            a {
+                color: #FFF;
+                text-decoration: underline;
+                transition: opacity .1s linear;
+        
+                &:hover, &:focus {
+                    color: $qg-global-primary-hover-grey;
+                }
+            }
+
+            &:before{
+                @include rem(font-size, 20px);
+                color: #FFF;
+                font-family: FontAwesome;
+                margin-right: 10px;
+            }
+
+            &.phone:before {
+                content: "\f095";
+            }
+
+            &.facebook:before {
+                content: "\f082";
+            }
+
+            &.twitter:before {
+                content: "\f081";
+            }
+        }
+    }
+
+    @include media-breakpoint-down(md) {
+        .col:first-child {
+            padding-left: 40px;
+        }
+
+        h3 {
+            margin-top: 45px;
+        }
+    }
+
+    @include media-breakpoint-down(sm) {
+        .col {
+            flex-basis: 50%;
+            max-width: 50%;
+            padding: 0 40px;
+            position: relative;
+        }
+
+        .qg-footer-col-content {
+            max-width: 420px
+        }
+
+        h3 {
+            margin-top: 20px;
+        }
+    }
+
+    @media (max-width: 600px) {
+        .col {
+            flex-basis: 100%;
+            max-width: none;
+            padding: 0 25px 35px;
+
+            &:first-child {
+                padding-left: 25px;
+                padding-bottom: 0;
+            }
+
+            &:last-child {
+                h3 {
+                    margin-top:0;
+                }
+            }
+
+        
+            > * {
+                margin-left: auto;
+                margin-right: auto; 
+            }
+        }
+    }
+}

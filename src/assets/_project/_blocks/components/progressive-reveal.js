@@ -91,6 +91,7 @@
     const $tgt = $($(this).attr(trgrTargetAttr));
 
     $(this).data(trgrActiveDataName, true);
+    $(this).toggleClass('toggle-active');
 
     // Handle other active elements
     if ($(this).attr(trgrParentAttr)) {

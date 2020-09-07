@@ -1,0 +1,75 @@
+.clearfix:after {
+  content: ".";
+  visibility: hidden;
+  display: block;
+  height: 0;
+  clear: both;
+}
+.qg-print-guide{
+  background: #eef5f8;
+  padding: 20px;
+  position: relative;
+  ol{
+    list-style: none;
+    padding-left: 0;
+
+    li{
+      counter-increment: item;
+      margin-bottom: 5px;
+      margin: 0 0 10px 46px;
+      &.active{
+        font-weight:bold;
+      }
+    }
+  }
+
+  ol li:before {
+    margin-right: 19px;
+    content: counter(item);
+    background: #ddecf1;
+    width: 1.8em;
+    text-align: center;
+    display: inline-block;
+    color: #05457f;
+    position: absolute;
+    left: 18px;
+
+  }
+
+  .next  {
+    position: absolute;
+    right: 15px;
+    bottom: 15px;
+    a:after{
+      padding-left: 12px !important;
+    }
+  }
+  .previous{
+    position: absolute;
+    left: 15px;
+    bottom: 15px;
+    a:before{
+      content: "\f053" !important;
+      padding-right: 12px !important;
+      padding-left:0 !important;
+    }
+  }
+
+  .next a:after, .previous a:before{
+    display: inline-block;
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 0.7rem !important;
+    content: "\f054";
+    background: inherit;
+    color: inherit;
+  }
+
+}
+
+.qg-print-guide .next a, .qg-print-guide .next a:hover, .qg-print-guide .next a:active, .qg-print-guide .next a:focus, .qg-print-guide .previous a, .qg-print-guide .previous a:hover, .qg-print-guide .previous a:active, .qg-print-guide .previous a:focus {
+  background: #585e62;
+  color: #fff !important;
+  text-decoration: none !important;
+}
