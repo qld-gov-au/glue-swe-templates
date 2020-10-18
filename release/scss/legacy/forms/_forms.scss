@@ -1,0 +1,1243 @@
+/* status in butterfly lightbox */
+#jb-window .status {
+  margin: 0;
+}
+
+.success-step {
+  background-color: #EEF4F6;
+  color: #000000;
+}
+
+.success-step:before {
+  display: inline-block;
+  font-family: FontAwesome;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 40px;
+  font-size: 2.5rem;
+  line-height: 1;
+  padding-right: 16px;
+  padding-right: 1rem;
+  content: "";
+  text-decoration: inherit;
+  background: inherit;
+  color: #000;
+}
+
+.success-step:hover:before {
+  display: inline-block;
+  font-family: FontAwesome;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 40px;
+  font-size: 2.5rem;
+  line-height: 1;
+  padding-right: 16px;
+  padding-right: 1rem;
+  content: "";
+  text-decoration: none;
+  background: inherit;
+  color: #000;
+}
+
+.success-step:before, .success-step:hover:before {
+  background: #EEF4F6;
+  color: #759BF3;
+}
+
+.success {
+  background-color: #F2F7EA;
+  color: #000000;
+}
+
+.success:before {
+  display: inline-block;
+  font-family: FontAwesome;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 40px;
+  font-size: 2.5rem;
+  line-height: 1;
+  padding-right: 16px;
+  padding-right: 1rem;
+  content: "";
+  text-decoration: inherit;
+  background: inherit;
+  color: #000;
+}
+
+.success:hover:before {
+  display: inline-block;
+  font-family: FontAwesome;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 40px;
+  font-size: 2.5rem;
+  line-height: 1;
+  padding-right: 16px;
+  padding-right: 1rem;
+  content: "";
+  text-decoration: none;
+  background: inherit;
+  color: #000;
+}
+
+.success:before, .success:hover:before {
+  background: #F2F7EA;
+  color: #9CBF6D;
+}
+
+.warn {
+  background-color: #FFEDDE;
+  color: #000000;
+}
+
+.warn:before {
+  display: inline-block;
+  font-family: FontAwesome;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 4.5rem;
+  line-height: 1;
+  padding-right: 1rem;
+  content: "";
+  text-decoration: inherit;
+  background: inherit;
+  color: #000;
+}
+
+.warn:hover:before {
+  display: inline-block;
+  font-family: FontAwesome;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 4.5rem;
+  line-height: 1;
+  padding-right: 1rem;
+  content: "";
+  text-decoration: none;
+  background: inherit;
+  color: #000;
+}
+
+.warn:before, .warn:hover:before {
+  background: #FFEDDE;
+  color: #f8ae70;
+}
+
+.fail {
+  background-color: #FEECEF;
+  color: #000000;
+}
+
+.fail:before {
+  display: inline-block;
+  font-family: FontAwesome;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 40px;
+  font-size: 2.5rem;
+  line-height: 1;
+  padding-right: 16px;
+  padding-right: 1rem;
+  content: "";
+  text-decoration: inherit;
+  background: inherit;
+  color: #000;
+}
+
+.fail:hover:before {
+  display: inline-block;
+  font-family: FontAwesome;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 40px;
+  font-size: 2.5rem;
+  line-height: 1;
+  padding-right: 16px;
+  padding-right: 1rem;
+  content: "";
+  text-decoration: none;
+  background: inherit;
+  color: #000;
+}
+
+.fail:before, .fail:hover:before {
+  background: #FEECEF;
+  color: #EA6A7E;
+}
+
+div.download {
+  background-color: #F5EBDC;
+  color: #000000;
+}
+
+div.download:before {
+  display: inline-block;
+  font-family: FontAwesome;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 40px;
+  font-size: 2.5rem;
+  line-height: 1;
+  padding-right: 16px;
+  padding-right: 1rem;
+  content: "";
+  text-decoration: inherit;
+  background: inherit;
+  color: #000;
+}
+
+div.download:hover:before {
+  display: inline-block;
+  font-family: FontAwesome;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 40px;
+  font-size: 2.5rem;
+  line-height: 1;
+  padding-right: 16px;
+  padding-right: 1rem;
+  content: "";
+  text-decoration: none;
+  background: inherit;
+  color: #000;
+}
+
+div.download:before, div.download:hover:before {
+  background: #F5EBDC;
+  color: #AE8446;
+}
+
+.form > .xor {
+  margin: .5em 0;
+}
+
+ol.xor > li {
+  list-style: upper-alpha;
+  border-top: 1px solid #cccccc;
+  margin-top: 2em;
+  padding: 1.5em 0 0;
+}
+
+ol.xor > li > h2 {
+  margin-top: 0;
+}
+
+ol.xor > li:first-child {
+  border-top: none;
+  margin-top: 0;
+  padding-top: 0;
+}
+
+ol.xor > li::before {
+  content: " or ";
+  font-weight: bold;
+  text-transform: capitalize;
+  background: transparent;
+  color: #007EB1;
+  position: absolute;
+  padding: .7em;
+  margin-top: -3em;
+  margin-left: -3em;
+}
+
+ol.xor > li:first-child::before {
+  content: none;
+}
+
+.qg-acc h3 {
+  margin: .7em 0;
+}
+
+#search-form button#search-button {
+  height: 2.3em;
+}
+
+.listbox, #tools .listbox {
+  background: #f9f9f9;
+  border: 1px solid #78BA00;
+  border-top: none;
+  margin-top: -1px;
+  /* overlap search box bottom border */
+  padding: 0;
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+}
+
+.listbox li, #tools .listbox li {
+  padding: 0;
+  display: block;
+  float: none;
+  margin-top: 0;
+}
+
+.listbox a, #tools .listbox a {
+  white-space: nowrap;
+  /* override #tools a */
+  color: #0B2E4C;
+  padding: 0.5em 0.7em;
+}
+
+.listbox a:hover, #tools .listbox a:hover, .listbox a:focus, #tools .listbox a:focus, .listbox a.focus, #tools .listbox a.focus {
+  /* override #tools a */
+  background: #fff;
+  color: #939393;
+  border: none;
+}
+
+.listbox mark, #tools .listbox mark {
+  background: transparent;
+  color: inherit;
+  font-weight: bold;
+}
+
+/* styling input widgets */
+form button,
+.button,
+input[type=text],
+input[type=password],
+input[type=search],
+input[type=email],
+input[type=tel],
+input[type=url],
+input[type=date],
+input[type=time],
+input[type=datetime],
+input[type=number],
+select,
+textarea {
+  background: #ffffff;
+  border: 1px solid #cccccc;
+  padding: .5em .7em;
+  max-width: 100%;
+  font-family: "Lato", Helvetica, Arial, sans-serif;
+}
+
+/* separate the :not() selector or the whole block is ignored in older browsers */
+input:not([type]) {
+  font: inherit;
+  padding: .3em;
+  max-width: 90%;
+  background: #ffffff;
+  border: 1px solid #cccccc;
+}
+
+table form button,
+table .button,
+table input[type=text],
+table input[type=password],
+table input[type=search],
+table input[type=email],
+table input[type=tel],
+table input[type=url],
+table input[type=date],
+table input[type=time],
+table input[type=datetime],
+table input[type=number],
+table select,
+table textarea {
+  padding: .2em .7em;
+}
+
+table input:not([type]) {
+  padding: .2em .7em;
+}
+
+.aside form button,
+.aside .button,
+.aside input[type=text],
+.aside input[type=password],
+.aside input[type=search],
+.aside input[type=email],
+.aside input[type=tel],
+.aside input[type=url],
+.aside input[type=date],
+.aside input[type=time],
+.aside input[type=datetime],
+.aside input[type=number],
+.aside select,
+.aside textarea {
+  background: #ffffff;
+  border: 1px solid #cccccc;
+  padding: .5em .7em;
+  max-width: 90%;
+}
+
+.search {
+  clear: both;
+  position: relative;
+}
+
+.search input {
+  float: left;
+  padding: .45em;
+}
+
+.search input[type="search"] {
+  -webkit-appearance: none;
+}
+
+.search .lookup {
+  background: #666666;
+  border: 0 none;
+  color: #ffffff;
+  display: inline-block;
+  padding: 0.2em 0.4em;
+  position: absolute;
+  right: 2.6em;
+  top: .85em;
+  z-index: 100;
+}
+
+.search .search-button {
+  float: none;
+}
+
+.search .results {
+  border-top: 1px solid #cccccc;
+  margin: 0.5em 0.5em 0 1em;
+  padding: 0.5em 0;
+}
+
+.search .section {
+  border-bottom: 0;
+}
+
+.search .all {
+  display: block;
+}
+
+textarea {
+  width: 90%;
+  max-width: 50em;
+  overflow: auto;
+}
+
+//select {
+//  overflow-x: hidden;
+//}
+
+textarea.large-compact {
+  height: 4.5em;
+  -webkit-transition: height .3s ease-out;
+  -o-transition: height .3s ease-out;
+  transition: height .3s ease-out;
+}
+
+textarea.large-compact:focus {
+  height: 25em;
+}
+
+/* numbers */
+.number td {
+  text-align: right;
+}
+
+#asides .questions input[type=text],
+#asides .questions input[type=password],
+#asides .questions input[type=search],
+#asides .questions input[type=email],
+#asides .questions input[type=tel],
+#asides .questions input[type=url],
+#asides .questions input[type=date],
+#asides .questions input[type=time],
+#asides .questions input[type=datetime],
+#asides .questions input[type=number],
+#asides .questions select {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 99%;
+  max-width: 99%;
+}
+
+#asides .questions .location {
+  padding-top: 0.2em;
+  padding-right: 3em;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  position: relative;
+}
+
+#asides .questions .location:before, #asides .questions .location:after {
+  content: " ";
+  display: table;
+}
+
+#asides .questions .location:after {
+  clear: both;
+}
+
+#asides .questions .location input#location {
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+#asides .questions .location input#location + #app-geocoding {
+  background: #78BA00;
+  position: absolute;
+  height: 2em;
+  right: 0;
+  margin: 0.05em 0 0;
+  padding: 0.15em 0.2em;
+  vertical-align: middle;
+}
+
+#asides .questions .location input#location + #app-geocoding:hover, #asides .questions .location input#location + #app-geocoding:focus {
+  background-color: #b1e455;
+  outline: 1px solid #78BA00;
+  outline-offset: -1px;
+}
+
+.actions a {
+  display: inline-block;
+  //margin: 0.75em 0;
+}
+
+/* disabled items */
+.placeholder,
+.disabled {
+  color: #444444;
+}
+
+input[disabled],
+select[disabled],
+textarea[disabled] {
+  background: transparent;
+  color: #777777;
+}
+
+input[readonly],
+select[readonly],
+textarea[readonly] {
+  color: #777777;
+}
+
+/* a form is a list of questions */
+.questions {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.questions li {
+  clear: left;
+  position: relative;
+  padding: .5em 0 .7em;
+  /* padding-bottom +.3em to balance padding-top (accounting for line-height on text) */
+  list-style: none;
+  -webkit-transition: opacity 0.2s ease,
+  margin 0.2s ease,
+  padding 0.2s ease;
+  -o-transition: opacity 0.2s ease,
+  margin 0.2s ease,
+  padding 0.2s ease;
+  transition: opacity 0.2s ease,
+  margin 0.2s ease,
+  padding 0.2s ease;
+}
+
+form li[hidden="hidden"] *{
+  display: none;
+  max-height: 0;
+}
+
+.questions li[hidden] {
+  display: block;
+  max-height: 0;
+  opacity: 0;
+  margin: 0 !important;
+  padding: 0 !important;
+  -webkit-transition: none;
+  -o-transition: none;
+  transition: none;
+  position: absolute;
+}
+
+/* form footer */
+form li.footer {
+  list-style: none;
+  padding-bottom: .5em;
+  padding-top: 0.8em;
+}
+
+.sections li.footer {
+  padding: .5em;
+}
+
+/* form actions */
+.actions, #asides .actions {
+  display: block;
+  list-style: none;
+  margin: 0;
+  padding: .5em 0 0;
+  overflow: hidden;
+}
+
+.actions:before, .actions:after, #asides .actions:before, #asides .actions:after {
+  content: " ";
+  display: table;
+}
+
+.actions:after, #asides .actions:after {
+  clear: both;
+}
+
+.actions li,
+.questions .actions li {
+  clear: none;
+  float: left;
+  display: inline-block;
+  list-style: none;
+  margin: 0 1em .5em 0;
+  padding: 0;
+  border: none;
+  background: transparent;
+}
+
+.actions input {
+  max-width: none;
+}
+
+/* link actions */
+.actions :link,
+.actions :visited {
+  color: #13578b;
+}
+
+/* question states */
+.invalid .alert {
+  color: #F85C50;
+}
+
+.invalid > button,
+.invalid > input,
+.invalid > select,
+.invalid > textarea {
+  border-color: #F85C50;
+  color: #F85C50;
+  font-weight: normal;
+}
+
+/* focus */
+button.focus,
+input.focus,
+select.focus,
+textarea.focus {
+  border-color: #007EB1;
+}
+
+/* form sections */
+form .sections {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+li.section {
+  border-bottom: 1px solid #cccccc;
+  margin: .5em 0;
+  padding: .5em 0;
+}
+
+li.section li.section {
+  border-bottom: none;
+  margin: .5em 0 0;
+  padding: .5em 0 0;
+}
+
+legend .h2,
+legend .h3 {
+  display: block;
+  color: #000000;
+  font-family: "Trebuchet MS", Helvetica, Arial, sans-serif;
+  font-weight: bold;
+  font-size: 150%;
+  /*margin: .83em 0;*/
+}
+
+legend .h3 {
+  font-size: 130%;
+  /*margin: 1em 0;*/
+}
+
+/* instructions */
+.instructions {
+  p {
+    margin-top: 0;
+  }
+  small, p {
+    @include rem(font-size, 14px);
+  }
+}
+
+/* group controls */
+.questions > li.compact {
+  padding-top: 0;
+  padding-bottom: 0;
+  overflow: hidden;
+}
+
+.questions > li.group {
+  padding-bottom: 0;
+}
+
+.group > .questions > li,
+.group > fieldset > .questions > li {
+  margin: 0;
+  background: transparent;
+}
+
+/* group labels */
+/*.group .questions .label,
+.group .questions abbr.required,
+.group .questions abbr[title*="required"] {
+  font-size: 80%;
+}
+
+.group .questions abbr[title*="required"] {
+  font-size: 100%;
+}*/
+
+/* compact question layout */
+.group > fieldset .compact li {
+  float: left;
+  clear: none;
+  margin-right: 1.5em;
+}
+
+/* prevent floated selects from truncating */
+.group select {
+  max-width: 100%;
+}
+
+/* https://github.com/h5bp/html5-boilerplate/wiki/css */
+fieldset {
+  border: none;
+  min-width: 0;
+  /* fix for iOS safari - fixes: elements withing fieldsets not scaling correctly */
+  width: 100%;
+  /* fix for iOS safari - fixes: elements withing fieldsets not scaling correctly */
+}
+
+legend {
+  margin: 0;
+  padding: 0;
+  white-space: normal;
+  width: 100%;
+  border: 0;
+  color: inherit;
+}
+
+/* labels and alerts */
+label {
+  cursor: pointer;
+}
+
+.label,
+.hint,
+label .help,
+legend .help,
+.alert {
+  display: block;
+}
+
+/* help inside a hint inline */
+label .hint .help,
+legend .hint .help {
+  display: inline;
+}
+
+/* required fields */
+abbr.required, abbr[title*="required"] {
+  color: #F85C50;
+  border-bottom: none;
+  text-decoration: none;
+}
+
+.questions abbr.required, .questions abbr[title*="required"] {
+  position: absolute;
+  margin-left: -0.5em;
+  top: 0;
+  font-size: 1.5em;
+}
+
+.questions .h3 ~ abbr.required {
+  top:20px;
+}
+
+/* radio buttons and checkboxes are choices */
+.choices,
+#asides .choices {
+  display: block;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.questions .choices li {
+  padding: 0 0 0 20px;
+  margin: .3em 0;
+  background: transparent;
+  list-style: none;
+  border: none;
+}
+
+.choices li input {
+  position: absolute;
+  margin-left: -20px;
+  padding: 0;
+  top: .4em;
+}
+
+/* compact options layout */
+.questions .compact > li {
+  float: left;
+  clear: none;
+  margin-right: 1.5em;
+}
+
+/* checked radio buttons/checkboxes */
+input:checked + label {
+  font-weight: bold;
+  color: #007EB1;
+}
+
+input[type="checkbox"] {
+  margin-right: 6px;
+  & + label{
+    display: inline;
+  }
+}
+
+.choices label {
+  position: relative;
+  /*padding-left: 20px;
+  margin-left: -20px;*/
+}
+
+/* data display */
+.data dt {
+  font-weight: normal;
+  margin: 1em 0 .3em;
+}
+
+.data dd {
+  border: 1px solid #dbdbdb;
+  background: #f9f9f9;
+  margin: 0 0 1em;
+  position: relative;
+  padding: .5em .5em .7em;
+  /* padding-bottom +.3em to balance padding-top (accounting for line-height on text) */
+  min-height: 1em;
+  list-style: none;
+  word-wrap: break-word;
+}
+
+.tba dd {
+  background: transparent;
+  color: #777777;
+}
+
+.data dd a {
+  color: #444444;
+  text-decoration: none;
+}
+
+.data dd a:active,
+.data dd a:hover {
+  color: inherit;
+  text-decoration: underline;
+}
+
+/* data to copy and paste */
+.copypaste {
+  font-weight: normal;
+  font-size: 180%;
+}
+
+/* edit links */
+.edit {
+  text-align: right;
+  margin: .5em 0;
+}
+
+/**
+ * Basic functionality styles for "Compact Form Labels"
+ * These styles assume that each form input/label pair are surrounded by a div with a class form-element.
+ * These styles need to be customised for the forms markup you are using.
+ */
+.form-element,
+#tools #search-form {
+  position: relative;
+  overflow: hidden;
+}
+
+#search-form label.compact-label {
+  cursor: text;
+}
+
+label.compact-label {
+  position: absolute;
+  top: .15em;
+  left: .5em;
+  z-index: 1;
+  color: #666666;
+}
+
+/* printing forms */
+@media print {
+  .actions button,
+  .actions .button,
+  .actions input,
+  .actions a {
+    display: none;
+  }
+}
+
+/* reseting overiding styles - for G.I. feedback */
+#page-feedback form ul.actions {
+  margin-top: 0;
+  float: none;
+}
+
+/* buttons */
+button,
+.button,
+input[type=button],
+input[type=submit],
+input[type=image],
+input[type=reset] {
+  cursor: pointer;
+  pointer-events: auto;
+  //border-radius: 0;
+}
+
+.button,
+.button:link,
+.button:visited,
+.button:active,
+.button:focus,
+.button:hover,
+#asides .button:visited {
+  display: inline-block;
+  color: #ffffff;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+/* leave image buttons alone */
+input[type=image] {
+  padding: 0;
+  max-width: none;
+  background: transparent;
+  border: none;
+}
+
+/* actions buttons */
+form button,
+.ui-button,
+.ui-widget .ui-button,
+.actions .button,
+.poll .button,
+.actions input,
+#page-feedback form .actions input[type=submit] {
+  margin: 0;
+  line-height: 1.2;
+  padding: 1em 2em;
+  max-width: none;
+  font-weight: bold;
+  font-style: normal;
+  color: #ffffff;
+  background: #585E62;
+  border: none;
+  //border-radius: 0;
+  //-moz-border-radius: 0;
+  //-webkit-border-radius: 0;
+}
+
+/* slimmer buttons in asides */
+.aside button,
+.aside .button,
+.aside .ui-button,
+.aside .actions input {
+  padding-top: .5em;
+  padding-bottom: .5em;
+}
+
+/* interaction states */
+form button:hover,
+form button:focus,
+.ui-button:hover,
+.ui-button:focus,
+.ui-widget .ui-button:hover,
+.ui-widget .ui-button:focus,
+.actions .button:hover,
+.actions .button:focus,
+.poll .button:hover,
+.poll .button:focus,
+.actions input:hover,
+.actions input:focus {
+  color: #000000;
+  outline-offset: -1px;
+}
+
+.ui-button-icon-only:hover,
+.ui-button-icon-only:focus,
+.ui-widget .ui-button-icon-only:hover,
+.ui-widget .ui-button-icon-only:focus {
+  outline: none;
+}
+
+form button:active,
+.ui-button:active,
+.ui-widget .ui-button:active,
+.actions .button:active,
+.poll .button:active,
+.actions input:active {
+  background-color: #585E62;
+}
+
+/* primary action */
+form strong button,
+strong .ui-button,
+.ui-widget strong .ui-button,
+.actions strong .button,
+.poll .button,
+.actions strong input,
+#page-feedback .actions strong input[type=submit] {
+  background-color: #78BA00;
+  color: #000000;
+}
+
+form strong button:hover,
+form strong button:focus,
+strong .ui-button:hover,
+strong .ui-button:focus,
+.ui-widget strong .ui-button:hover,
+.ui-widget strong .ui-button:focus,
+.actions strong .button:hover,
+.actions strong .button:focus,
+.poll .button:hover,
+.poll .button:focus,
+.actions strong input:hover,
+.actions strong input:focus {
+  background-color: #b1e455;
+  //outline: 1px solid #78BA00;
+  //outline-offset: -1px;
+}
+
+form strong button:active,
+strong .ui-button:active,
+.ui-widget strong .button:active,
+.actions strong .button:active,
+.poll .button:active,
+.actions strong input:active {
+  /* reverse gradient */
+  background-color: #78BA00;
+}
+
+/* alternate primary action */
+form em button,
+em .ui-button,
+.ui-widget em .ui-button,
+.actions em .button,
+.actions em input {
+  background-color: #007EB1;
+  color: #ffffff;
+}
+
+form em button:hover,
+form em button:focus,
+em .ui-button:hover,
+em .ui-button:focus,
+.ui-widget em .ui-button:hover,
+.ui-widget em .ui-button:focus,
+.actions em .button:hover,
+.actions em .button:focus,
+.actions em input:hover,
+.actions em input:focus {
+  color: #000000;
+  background-color: #9ac5df;
+  outline: 1px solid #007EB1;
+  outline-offset: -1px;
+}
+
+form em button:active,
+em .ui-button:active,
+.ui-widget em .ui-button:active,
+.actions em .button:active,
+.actions em input:active {
+  background-color: #007EB1;
+}
+
+/* disabled buttons */
+.ui-button[disabled],
+form button[disabled],
+.poll .button[disabled],
+form input[type="submit"][disabled] {
+  opacity: .35;
+  /* based on jquery UI .ui-state-disabled */
+  background: #585E62;
+  color: #ffffff;
+  cursor: default;
+}
+
+strong .ui-button[disabled],
+.ui-widget strong .ui-button[disabled],
+form strong button[disabled],
+form strong input[type="submit"][disabled] {
+  background: #78BA00;
+  color: #000000;
+}
+
+em .ui-button[disabled],
+.ui-widget em .ui-button[disabled],
+form em button[disabled],
+form em input[type="submit"][disabled] {
+  background: #007EB1;
+  color: #ffffff;
+}
+
+#search-button,
+#search-button-primary {
+  background: #78BA00;
+  padding: 0;
+  margin: 0;
+}
+
+/* NOTE: these selectors must be separate or the entire property block will be ignored
+http://stackoverflow.com/questions/11459051/firefox-moz-placeholder-not-working */
+/* placeholder colour in search fields */
+#header ::-moz-placeholder,
+#banner ::-moz-placeholder,
+.search ::-moz-placeholder {
+  color: #666666;
+  opacity: 1;
+}
+
+#header ::-webkit-input-placeholder,
+#banner ::-webkit-input-placeholder,
+.search ::-webkit-input-placeholder {
+  color: #666666;
+}
+
+#header :-ms-input-placeholder,
+#banner :-ms-input-placeholder,
+.search :-ms-input-placeholder {
+  color: #666666;
+}
+
+#header .placeholdersjs,
+#banner .placeholdersjs,
+.search .placeholdersjs {
+  color: #666666;
+}
+
+/* hide placeholder on focus */
+#header :focus::-moz-placeholder,
+#banner :focus::-moz-placeholder,
+:focus::-moz-placeholder {
+  opacity: 0;
+}
+
+:focus::-webkit-input-placeholder {
+  direction: ltr;
+  text-indent: -999px;
+}
+
+form {
+  .alert{
+    padding: 0;
+    margin: 0;
+    font-weight: bold;
+    border: none;
+  }
+  .invalid .alert {
+    color: #d93d31;
+    font-weight: 700;
+  }
+  .choices li input {
+    position: absolute;
+    margin-left: -20px;
+    padding: 0;
+    //top: inherit;
+  }
+  .questions {
+    select{
+      overflow: auto;
+    }
+    @-moz-document url-prefix() {
+      input[type=radio]{
+        box-shadow: 0 0 1px $qg-dark-grey;
+      }
+    }
+   }
+}
+
+#qg-page-feedback{
+  .status:before {
+    margin-left: -0.6em;
+  }
+  .questions abbr.required, .questions abbr[title*="required"] {
+    position: inherit;
+  }
+  .warn {
+    margin: 0;
+    background-color: #FFEDDE;
+    width: 94.5%;
+    margin-left: 74px;
+
+    /* Small Devices, Tablets */
+    @media only screen and (max-width : 768px) {
+      width: inherit;
+    }
+  }
+  .qg-status.qg-warn {
+    ol {
+      list-style-type: decimal !important;
+    }
+  }
+}
+
+.qg-search-form {
+  .form-control{
+    color: $qg-dark-grey-lightest;
+    &::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+      color: $qg-dark-grey-lightest;
+      opacity: 1; /* Firefox */
+    }
+
+    &:-ms-input-placeholder { /* Internet Explorer 10-11 */
+      color: $qg-dark-grey-lightest;
+    }
+
+    &::-ms-input-placeholder { /* Microsoft Edge */
+      color: $qg-dark-grey-lightest;
+    }
+  }
+}
+

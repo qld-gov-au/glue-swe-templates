@@ -1,0 +1,160 @@
+/*
+ * Mobile layout
+ */
+.qg-quick-exit {
+  background: #7954a3;
+  background: -webkit-gradient(left top, right top, color-stop(0, #7954a3), color-stop(100%, #0b2e4c));
+  background: linear-gradient(90deg, #7954a3 0, #0b2e4c);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="$qg-purple", endColorstr="$qg-dark-blue", GradientType=1);
+  color: #fff;
+  height: 72px;
+  left: 0;
+  bottom: 0;
+  padding: 16px;
+  position: fixed;
+  width: 100%;
+  z-index: 100;
+    .qg-quick-exit__inner {
+        display: -ms-flexbox;
+        display: flex;
+        align-items: center;
+        .qg-quick-exit__tips {
+          display: none
+        }
+        .qg-quick-exit__input:focus + .qg-quick-exit__label {
+          outline: thin dotted;
+          outline: 5px auto -webkit-focus-ring-color
+        }
+        .qg-quick-exit__input:checked + .qg-tooltip__parent .qg-tooltip__wrapper {
+          display: block
+        }
+        .qg-quick-exit__input:checked + .qg-quick-exit__label {
+          color: #fff;
+          font-weight: 500
+        }
+        .qg-tooltip__parent {
+          position: relative
+        }
+        .qg-tooltip__wrapper {
+          background-color: #ffd200;
+          bottom: 50px;
+          box-shadow: 0 0 8px 0 #8a8f91;
+          color: #000;
+          display: none;
+          font-weight: 500;
+          padding: 25px;
+          position: absolute
+        }
+        .qg-tooltip__wrapper:after {
+          border-bottom: 14px solid #ffd200;
+          border-left: 14px solid #ffd200;
+          border-right: 14px solid transparent;
+          border-top: 14px solid transparent;
+          bottom: -14px;
+          content: " ";
+          position: absolute;
+          left: 25px;
+          transform: rotate(-45deg)
+        }
+        .qg-quick-exit__label {
+          font-weight: 500;
+          text-decoration: underline
+        }
+        .qg-quick-exit__list {
+          margin: 0;
+          padding: 0;
+          list-style: none;
+          -ms-flex-align: center;
+          align-items: center;
+          display: -ms-flexbox;
+          display: flex;
+          height: 100%;
+          -ms-flex-pack: distribute;
+          justify-content: space-around
+        }
+        .qg-quick-exit__actions {
+          -ms-flex-positive: 1;
+          flex-grow: 1
+        }
+        .qg-quick-exit__button {
+          border-radius: 4px;
+          display: inline-block;
+          text-decoration: none;
+          border-color: #ffd200;
+          background-color: #ffd200;
+          color: #0c2e4c;
+          font-weight: 700;
+          padding: 8px 34px
+        }
+    }
+}
+
+
+/*
+ * Desktop layout
+ */
+@media screen and (min-width: 992px) {
+  .qg-quick-exit {
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    position: relative;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+      .qg-quick-exit__inner {
+        //background: none;
+        justify-content: space-between;
+          .qg-quick-exit__tips {
+            display: block;
+            padding-left: 16px
+          }
+          .qg-quick-exit__tip-link {
+            -ms-flex-align: center;
+            align-items: center;
+            color: #fff;
+            display: -ms-flexbox;
+            display: flex;
+            &:active, &:focus, &:hover {
+              color: #fff;
+              text-decoration: none
+            }
+            .fa {
+              font-size: 22px;
+              margin-right: 8px
+            }
+            .qg-quick-exit__tip-title {
+              text-decoration: underline
+            }
+          }
+          .qg-quick-exit__actions {
+            padding-right: 9px;
+            -ms-flex-positive: 0;
+            flex-grow: 0
+          }
+          .qg-quick-exit__item {
+            margin-left: 25px
+          }
+          .qg-tooltip__wrapper {
+            bottom: auto;
+            top: 40px;
+            padding: 16px
+          }
+          .qg-tooltip__wrapper:after {
+            border-bottom: 8px solid #ffd200;
+            border-left: 8px solid #ffd200;
+            border-right: 8px solid transparent;
+            border-top: 8px solid transparent;
+            bottom: auto;
+            left: 25px;
+            top: -8px;
+            transform: rotate(135deg)
+          }
+          .qg-quick-exit__button {
+            padding-left: 48px;
+            padding-right: 48px
+          }
+      }
+  }
+}

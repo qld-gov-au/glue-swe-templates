@@ -1,0 +1,20 @@
+#qg-content #qg-section-nav {
+  .guide-sub-nav {
+    a {
+      @include rem(padding-left, 60px);
+      &:before {
+        content: "";
+      }
+      .page-number {
+        speak: none;
+        float: left;
+        color: #13578b;
+        @include rem(min-width, 20px);
+        text-align: center;
+        @include rem(margin-left, -30px);
+        font-weight: 700;
+        background: $qg-grey-light;
+      }
+    }
+  }
+}

@@ -520,6 +520,36 @@ $(function () {
   // Functions
   //
 
+  // Script loader
+  qgLocation.fn.initScript = function () {
+    var scriptID = 'googleapi';
+
+    if ($('#' + scriptID).length === 0) {
+      //console.log('Maps not loaded');
+      // Maps not loaded
+      // Create script tag
+      var apiKey = 'AIzaSyDvR5MCDqi0HtcjkehKqbKhyoCxt4Khqac';
+      var scriptURL = 'https://maps.googleapis.com/maps/api/js?key=' + apiKey;
+      var scriptElement = document.createElement('script');
+
+      // Populate tag
+      scriptElement['type'] = 'text/javascript';
+      scriptElement['src'] = scriptURL;
+      scriptElement['id'] = scriptID;
+
+      // Insert into the DOM
+      document.querySelector('body').appendChild(scriptElement);
+      scriptElement.onload = function () {
+				qgLocation.fn.init();
+			};
+    } else {
+      //console.log('Maps already loaded on page');
+      // Maps already loaded on page
+      // Initialise location module
+      qgLocation.fn.init();
+    }
+  };
+
   // Initialiser
   qgLocation.fn.init = function () {
     // Set up events
@@ -818,7 +848,7 @@ $(function () {
     var locationID = '.header-location';
 
     if ($(locationID).length > 0) {
-      qgLocation.fn.init();
+      qgLocation.fn.initScript();
     }
   });
 

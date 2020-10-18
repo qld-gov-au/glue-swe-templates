@@ -1,0 +1,79 @@
+// Font size
+// use: @include fontSize(Xpx);
+
+@function calculateRem($size) {
+  $remSize: $size / 10px;
+  @return #{$remSize}rem;
+}
+@mixin fontSize($size) {
+  font-size: $size; //Fallback in px
+  font-size: calculateRem($size);
+}
+@mixin fonticon-core($font-size, $line-height, $padding, $content) {
+  display: inline-block;
+  font-family: $font-awesome;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-style: normal;
+  font-weight: normal;
+  //font-size: #{round($base-font-size * $font-size)}px;
+  font-size: #{$font-size}rem;
+  line-height: $line-height;
+  @if ($padding) {
+    //padding-right: #{round($base-font-size * $padding)}px;
+    padding-right: #{$padding}rem;
+  } @else {
+    padding-right: 0;
+  }
+  content: $content;
+}
+@mixin fonticon($content: null, $padding: 1, $font-size: 1, $line-height: 1, $color: inherit, $background: inherit) {
+  &:before {
+    @include fonticon-core($font-size, $line-height, $padding, $content);
+    text-decoration: inherit;
+    background: inherit;
+    color: $color;
+  }
+  &:hover:before {
+    @include fonticon-core($font-size, $line-height, $padding, $content);
+    text-decoration: none;
+    background: $background;
+    color: $color;
+  }
+}
+
+// TODO DRY as above, with padding on the left
+@mixin fonticon-core-after($font-size, $line-height, $padding, $content) {
+  display: inline-block;
+  font-family: $font-awesome;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-style: normal;
+  font-weight: normal;
+  font-size: #{round($base-font-size * $font-size)}px;
+  font-size: #{$font-size}rem;
+  line-height: $line-height;
+  @if ($padding) {
+    padding-left: #{round($base-font-size * $padding)}px;
+    padding-left: #{$padding}rem;
+  } @else {
+    padding-left: 0;
+  }
+  content: $content;
+}
+
+// TODO DRY same as above, but with the icon AFTER the content (e.g. for "Next >" style icons)
+@mixin fonticon-after($content: null, $padding: 1, $font-size: 1, $line-height: 1, $color: inherit, $background: inherit) {
+  &:after {
+    @include fonticon-core-after($font-size, $line-height, $padding, $content);
+    text-decoration: inherit;
+    background: inherit;
+    color: $color;
+  }
+  &:hover:after {
+    @include fonticon-core-after($font-size, $line-height, $padding, $content);
+    text-decoration: none;
+    background: $background;
+    color: $color;
+  }
+}

@@ -1,0 +1,93 @@
+.qg-service-centre {
+
+    .qg-service-centre-set-location {
+        padding: 9px 16px;
+        position: relative;
+        height: 44px;
+        transition: all .3s ease;
+
+
+        &__text {
+            left: 50%;
+            position: absolute;
+            transform: translateX(-50%);
+            transition: all .3s ease;
+            white-space: nowrap;
+            top: 9px;
+        }
+
+        &[aria-expanded=true] {
+            border-radius: 4px 4px 0 0;
+
+            .qg-service-centre-set-location__text {
+                left: 16px;
+                transform: translateX(0px);
+            }
+
+            + .qg-location-setter-wrap .qg-location-setter {
+                border-radius: 0 0 4px 4px;
+            }
+        }
+
+        &:hover,&:focus {
+            .qg-service-centre-set-location__text {
+                text-decoration: underline;
+            }
+        }
+    }
+
+    &__link{
+        @include rem(font-size, 18px);
+        display: block;
+        color: #fff;
+        margin: 20px 0;
+        text-decoration: underline;
+        transition: opacity .1s linear;
+
+        &:hover, &:focus {
+            color: #fff;
+            opacity: 0.7;
+        }
+    }
+
+    &__address {
+        @include rem(font-size, 14px);
+        @include rem(line-height, 16px);
+        display: block;
+    }
+
+    &-list {
+        &-item {
+            padding: 3px 0 3px 30px;
+            position: relative;
+
+            &:nth-child(1):before,
+            &:nth-child(2):before {
+                @include rem(font-size, 16px);
+                font-family: FontAwesome;
+                left: 0;
+                position: absolute;
+            }
+
+            &:nth-child(1):before {
+                content: "\f05a";
+            }
+
+            &:nth-child(2):before {
+                content: "\f14e";
+            }
+        } 
+    }
+
+    .qg-location-setter {
+        padding-top: 15px;
+        padding-bottom: 30px;
+        transition: all .3s ease;
+    }
+
+    @include media-breakpoint-down(sm) {
+        .qg-location-setter {
+            max-width: 420px;
+        }
+    }
+}

@@ -115,6 +115,7 @@
     "lato-webfont": "^2.15.1",
     "nodep-date-input-polyfill": "^5.2.0",
     "responsive-toolkit": "^2.6.3",
-    "stickyfill": "^1.1.1-strict"
+    "stickyfill": "^1.1.1-strict",
+    "yargs": "^16.0.3"
   }
 }

@@ -1,0 +1,34 @@
+.qg-promotional-content {
+    .promotions .figure {
+        position: relative;
+        //margin: 0.75em 0;
+    }
+    .credits-toggle {
+        position: absolute;
+        top: 143px;
+        right: 1em;
+        margin: -40px 5px 0;
+        padding: 0;
+        border: none;
+        background: transparent;
+        opacity: .67;
+        transition: opacity 0.1s ease;
+    }
+    .credits-toggle:hover {
+        opacity: 1;
+    }
+    .promotions img {
+        margin: 0;
+        display: block;
+        max-width: 100%;
+    }
+    .promotions .caption {
+        padding: 0 1.4em;
+        line-height: 1.75;
+        @include rem(font-size, 14px);
+        color: $qg-dark-grey;
+    }
+    .promotions .more {
+        text-align: right;
+    }
+}

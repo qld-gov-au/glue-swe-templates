@@ -1,0 +1,321 @@
+.qg-search-form {
+  padding-right: 10px;
+  padding-top: 20px;
+  z-index: 2;
+
+  .qg-search-concierge {
+    border-top: solid 1px $qg-pagination-border;
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+    opacity: 0;
+    left: 0;
+    visibility: hidden;
+    transition: opacity .3s ease, visibility 0s ease .3s;
+
+    &.show {
+      opacity: 1;
+      visibility: visible;
+      transition: opacity .3s ease;
+    }
+
+    &:after {
+      content: "";
+      background-color: #fff;
+      height: 3px;
+      position: absolute;
+      top: -4px;
+      width: 100%;
+    }
+
+    &-group {
+      background-color: $qg-global-primary-light-grey;
+      color: $qg-global-primary-darker-grey;
+      box-shadow: 0 4px 6px 0 rgba(32, 33, 36, 0.47);
+
+      &:last-child {
+        overflow: hidden;
+        border-radius: 0 0 4px 4px;
+      }
+
+      &.suggestions {
+        background-color: #fff;
+
+        .qg-search-concierge-content {
+          padding-top: 33px;
+          padding-bottom: 5px;
+        }
+
+        .list-group {
+          button, a {
+            padding: 13px 35px;
+          }
+        }
+      }
+
+      &.highlight {
+        background-color: $qg-global-primary-dark-grey;
+        color: #fff;
+
+        .qg-search-concierge-content {
+          padding-top: 18px;
+          padding-bottom: 20px;
+        }
+
+        .list-group {
+          button, a {
+            color: #fff;
+          }
+        }
+      }
+
+      &.helper {
+
+        .qg-search-concierge-content {
+          padding-top: 30px;
+          padding-bottom: 25px;
+        }
+
+        &:not(:last-child) {
+          border-bottom: 1px solid $qg-pagination-border;
+        }
+
+        .all {
+          color: $qg-global-primary-darker-grey;
+          display: block;
+          margin-top: 20px;
+          transition: opacity .1s linear;
+          text-decoration: underline;
+
+          &:hover, &:focus {
+            opacity: 0.7;
+          }
+        }
+
+        .list-group {
+          button, a {
+            position: relative;
+            padding-left: 58px;
+
+            &:before {
+              @include rem(font-size, 11px);
+              content: "\f054";
+              font-family: FontAwesome;
+              position: absolute;
+              top: 17px;
+              left: 37px;
+            }
+          }
+        }
+      }
+
+      .qg-search-concierge-content {
+        > h4, > p, > a, > button, > div {
+          margin-right: 35px;
+          margin-left: 35px;
+        }
+      }
+
+      .fa {
+        @include rem(font-size, 18px);
+        margin-left: 8px;
+      }
+
+      p:first-of-type {
+        margin-top: 4px;
+      }
+
+      .btn {
+        padding-left: 16px;
+        padding-right: 16px;
+      }
+
+      .list-group {
+        &-item {
+          background-color: transparent;
+          border: 0;
+          padding: 0;
+
+          button, a {
+            padding: 11px 35px;
+            font-weight: normal;
+            color: $qg-global-primary-darker-grey;
+            background: transparent;
+            display: block;
+            text-align: left;
+            width: 100%;
+
+            &:hover,&:focus {
+              text-decoration: underline;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .input-group {
+    float: right;
+    position: relative;
+    width: 525px;
+
+    input[type=text] {
+      border-radius: 4px;
+      border: 3px solid #fff;
+      padding: 10px 140px 10px 38px;
+      -webkit-appearance: none;
+      z-index: 0;
+
+      &::-ms-clear {
+        display: none;
+      }
+    }
+
+    .qg-search__icon {
+      height: 22px;
+      width: 22px;
+      position: absolute;
+      left: 13px;
+      top: 50%;
+      transform: translateY(-50%);
+
+      path {
+        fill: $qg-dark-grey1;
+      }
+    }
+
+    .qg-search-close-concierge {
+      border: 0;
+      background-color: transparent;
+      padding: 14px;
+      position: absolute;
+      right: 100px;
+
+      svg {
+        height: 22px;
+        width: 22px;
+
+        rect {
+          fill: $qg-dark-grey1;
+        }
+      }
+    }
+
+    .btn[type=submit] {
+      position: absolute;
+      right:3px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+
+  &.active {
+    .input-group .qg-search-close-concierge {
+      display: block;
+    }
+  }
+
+  @include media-breakpoint-down(sm) {
+    margin: 0;
+    width: 100%;
+
+    .qg-search-concierge {
+      @include rem(font-size, 14px);
+
+      &-group {
+        .qg-search-concierge-content {
+          > h4, > p, > a, > button, > div {
+            margin-right: 25px;
+            margin-left: 25px;
+          }
+        }
+
+        h4 {
+          @include rem(font-size, 14px);
+          flex-basis: 100%;
+        }
+
+        .fa {
+          @include rem(font-size, 16px);
+          margin-left: 0px;
+          margin-right: 8px;
+          flex-basis: 100%;
+        }
+
+        .btn {
+          @include rem(font-size, 14px);
+        }
+
+        &.suggestions {
+
+          .qg-search-concierge-content {
+            padding-top: 28px;
+          }
+
+          h4 {
+            margin-bottom: 15px;
+          }
+
+          .list-group {
+            &-item {
+              button, a {
+                padding: 13px 25px;
+              }
+            }
+          }
+        }
+
+        &.helper {
+
+          .qg-search-concierge-content {
+            padding-top: 23px;
+          }
+
+          h4 {
+            margin-bottom: 15px;
+          }
+
+          .list-group {
+            &-item {
+              button, a {
+                padding-left: 46px;
+
+                &:before {
+                  top: 16px;
+                  left: 25px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .input-group {
+      max-width: none;
+      margin-top: 30px;
+      width: 100%;
+
+      input[type=text] {
+        padding-right: 110px;
+      }
+    }
+
+    .input-group .qg-search-close-concierge {
+      right: 76px;
+    }
+  }
+
+  @include media-breakpoint-down(xs) {
+
+    .input-group {
+      margin-top: 15px;
+    }
+  }
+
+  @media print {
+    display: none;
+  }
+}

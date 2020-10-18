@@ -1,0 +1,81 @@
+// Extends bootstrap dropdowns
+//.btn-group:not(.dropup), .dropdown.qg-icon, .dropup.qg-icon{
+//    .dropdown-toggle:not(.noicon):after {
+.btn-group:not(.dropup), .dropdown, .dropup{
+    .dropdown-toggle.qg-icon:after {
+        display: inline-block;
+        width: 1.2em;
+        padding-left: 0.2em;
+
+        font-family: FontAwesome;
+        line-height: inherit;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        font-style: normal;
+        font-weight: normal;
+        text-decoration: none;
+    }
+}
+
+// .btn-group:not(.dropup), .dropdown {
+//     .dropdown-toggle:not(.noicon):after {
+.btn-group:not(.dropup), .dropdown {
+    .dropdown-toggle.qg-icon:after {
+       content: " \f078"; // Dropdown closed
+    }
+}
+
+.btn-group.open:not(.dropup), .dropdown.open {
+    .dropdown-toggle.qg-icon:after {
+       content: " \f00d"; // Dropdown open
+    }
+}
+.dropup .dropdown-toggle.qg-icon:after {
+    content: " \f077"; // Dropup closed
+}
+.dropup.open .dropdown-toggle.qg-icon:after {
+    content: " \f00d"; // Dropup open
+}
+
+.btn-group {
+    .dropdown-toggle.qg-icon:after {
+        width: 1.4em;
+        
+        padding-left: 0.1em;
+        padding-right: 0.1em;
+    }
+}
+
+.qg-toggle-icon:after {
+    content: "\f077";
+    
+    font-family: FontAwesome;
+    color: #fff;
+
+    &:focus, &:active {
+        outline: 0 !important;
+    }
+}
+
+.qg-toggle-icon-right {
+    @extend .qg-toggle-icon;
+    float: right;
+    padding: $padding-base-vertical;
+    // margin-top: -.5em;
+    margin-top: - $padding-base-vertical;
+    line-height: 1em;
+}
+.qg-toggle-icon-right,
+.qg-toggle-icon {
+    &.collapsed:after {
+        content: "\f078";
+    }
+}
+
+button[data-toggle=collapse].qg-icon,
+a[data-toggle=collapse].qg-icon {
+    @extend .qg-toggle-icon;
+    &:after {
+        padding-left: .4em;
+    }
+}

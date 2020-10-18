@@ -1,0 +1,98 @@
+.btn-global-primary{
+  color: #fff;
+  background-color: $qg-global-primary-dark-grey;
+  font-weight: bold;
+  border-radius: 4px;
+  padding: 9px 24px;
+
+  @include media-breakpoint-down(sm) {
+    padding: 9px 11px;
+  }
+
+  &:hover, &:focus {
+    text-decoration: underline;
+    color: #fff;
+    background-color: $qg-global-primary-dark-grey;
+  }
+
+  &:focus {
+    outline: 1px dotted #000;
+    outline: 5px auto -webkit-focus-ring-color;
+  }
+}
+
+.btn-global-primary-white{
+  color: $qg-global-primary-dark-grey;
+  background-color: #fff;
+  font-weight: bold;
+  border-radius: 4px;
+  overflow: hidden;
+  padding: 9px 24px;
+  display: table;
+
+  @include media-breakpoint-down(sm) {
+    padding: 9px 11px;
+  }
+
+  &:hover, &:focus {
+    color: $qg-global-primary-dark-grey;
+    text-decoration: underline;
+  }
+
+  &:focus {
+    outline: 1px dotted #000;
+    outline: 5px auto -webkit-focus-ring-color;
+  }
+}
+
+.btn-global-secondary{
+  color: #fff;
+  background-color: transparent;
+  border: solid 3px #fff;
+  display: table;
+  font-weight: bold;
+  border-radius: 4px;
+  padding: 7px 24px;
+  text-decoration: none;
+
+  &:hover, &:focus {
+    color: #fff;
+    text-decoration: underline;
+  }
+
+  &:focus {
+    outline: 1px dotted #000;
+    outline: 5px auto -webkit-focus-ring-color;
+  }
+}
+
+.btn-primary{
+  @include button-variant($qg-light-green, $qg-light-green, lighten($qg-light-green, 7.5%), $hover-border: $qg-light-green, $active-background:$qg-light-green, $active-border: $qg-light-green);
+  color: #000;
+  a, &:focus, &:hover, &:link, &:visited, &:active {
+    text-decoration: none !important;
+    color: #000 !important;
+  }
+}
+
+.btn-secondary {
+  @include button-variant($qg-blue, $qg-blue);
+  color: #fff;
+  a, &:focus, &:hover, &:link, &:visited, &:active {
+    color: #fff !important;
+    text-decoration: none !important;
+  }
+}
+
+.btn-default {
+  @include button-variant($qg-dark-grey, $qg-dark-grey);
+  color: #fff;
+  a, &:focus, &:hover, &:link, &:visited, &:active {
+    color: #fff !important;
+    text-decoration: none !important;
+  }
+}
+
+.qg-btn {
+  @extend .btn;
+}

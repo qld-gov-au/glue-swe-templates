@@ -1,0 +1,55 @@
+//
+// GLUE Accessibility features and options
+// --------------------------------------------------
+
+//// START link icons ////
+body:not([data-accessibility=false]):not([data-access-new-window=false]) {
+  #qg-content {
+    a:not(.btn):not(.qg-accessibility-off), // legacy
+    a:not(.btn):not([data-access-extlink=false]), a[data-access-extlinks=true], // legacy
+    a:not(.btn):not([data-access-new-window=false]), *[data-access-new-window=true] {
+      // Common CSS
+      &[target=_blank]:after,
+      &[href^="http://"]:not([href*="qld.gov.au"]):after,
+      &[href^="https://"]:not([href*="qld.gov.au"]):after,
+      &[href^="//"]:not([href*="qld.gov.au"]):after {
+        display: inline-block;
+        margin-left: 0.1em;
+        padding: 0 0.1em 0 0.2em;
+
+        background: inherit;
+        opacity: 0.8;
+
+        font-size: 0.7em;
+        line-height: inherit;
+        font-family: FontAwesome;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        font-style: normal;
+        font-weight: normal;
+        text-decoration: none;
+      }
+
+      // External links
+      // &[href^="http://"]:not([href*="qld.gov.au"]):after,
+      // &[href^="https://"]:not([href*="qld.gov.au"]):after,
+      // &[href^="//"]:not([href*="qld.gov.au"]):after{
+      //   content: " \f08e "; // content: " \f196 ";
+      // }
+
+      // New window links
+      &[target=_blank]{
+        &:after{
+          content: " \f08e ";
+        }
+        // // New window external links
+        // &[href^="http://"]:not([href*="qld.gov.au"]):after,
+        // &[href^="https://"]:not([href*="qld.gov.au"]):after,
+        // &[href^="//"]:not([href*="qld.gov.au"]):after{
+        //   content: " \f196  \f08e ";
+        // }
+      }
+    }
+  }
+}
+//// END link icons ////

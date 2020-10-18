@@ -1,0 +1,138 @@
+// if the font size is less than 16px on mobile then the IOS will zoom the page and this makes the page unstable
+ @include media-breakpoint-down(md) {
+    input, select, textarea {
+      font-size: 1rem !important;
+    }
+  }
+
+//custom theme for radio buttons and checkbox
+.rc-theme {
+  .rc-theme__focus{
+    outline: 2px solid $qg-blue;
+    outline-offset: 1px;
+  }
+  &.choices {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top:1em;
+  }
+  .rc-theme__active{
+    background-color: $qg-blue !important;
+    [type="checkbox"]:checked + label .rc-theme__icon, [type="radio"]:checked + label .rc-theme__icon {
+      fill: #fff;
+    }
+    .rc-theme__label-desc{
+      color: #fff;
+    }
+  }
+  .rc-theme__label{
+    padding-left: 35px;
+  }
+  .rc-theme__with-image{
+    text-align: center;
+    svg{
+      margin-top: 15px;
+    }
+    .rc-theme__icon {
+      fill: $black;
+    }
+    .rc-theme__label-desc{
+      display: inline-block;
+      margin-top: 19px;
+    }
+  }
+
+  //[type="checkbox"]:checked + label .rc-theme__icon, [type="radio"]:checked + label .rc-theme__icon {
+  //  background-color: #007eb1 !important;
+  //  fill: #fff;
+  //}
+  &.choices {
+    li {
+      width: 255px;
+      padding: 15px !important;
+      margin-bottom: 1rem;
+      margin-right: 2rem !important;
+      color: #000;
+      background-color: #fff;
+      border-radius: 3px;
+      border: 1px solid $qg-pagination-border !important;
+    }
+    label {
+      color: #000 !important;
+      font-weight: normal;
+    }
+  }
+
+  [type="radio"],
+  [type="checkbox"] {
+    position: absolute;
+    left: -9999px;
+   &+label {
+     position: relative;
+     cursor: pointer;
+     line-height: 20px;
+     display: inline-block;
+     color: #666;
+   }
+  }
+
+  [type="radio"]:checked + label:before,
+  [type="radio"]:not(:checked) + label:before{
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 22px;
+    height: 22px;
+    border: 1px solid #000;
+    border-radius: 100%;
+    background: #fff;
+  }
+
+  [type="checkbox"]:checked + label:before,
+  [type="checkbox"]:not(:checked) + label:before{
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 3px;
+    width: 22px;
+    height: 22px;
+    border: 1px solid #000;
+    background: #fff;
+  }
+  [type="radio"]:checked + label:after,
+  [type="radio"]:not(:checked) + label:after {
+    content: '';
+    width: 14px;
+    height: 14px;
+    background: #000;
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    border-radius: 100%;
+    transition: all 0.2s ease;
+  }
+
+  [type="checkbox"]:checked + label:after,
+  [type="checkbox"]:not(:checked) + label:after{
+    content: '\2714';
+    font-size: 22px;
+    position: absolute;
+    top: 4px;
+    left: 3px;
+    color: #000;
+    transition: all 0.2s ease;
+  }
+  [type="radio"]:not(:checked) + label:after,
+  [type="checkbox"]:not(:checked) + label:after{
+    opacity: 0;
+    -webkit-transform: scale(0);
+    transform: scale(0);
+  }
+  [type="radio"]:checked + label:after,
+  [type="checkbox"]:checked + label:after{
+    opacity: 1;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}

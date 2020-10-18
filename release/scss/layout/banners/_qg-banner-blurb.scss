@@ -1,0 +1,85 @@
+#qg-banner-blurb{
+  @include make-col-ready();
+  @include make-col(12);
+  min-height: 361px;
+  height: auto;
+  box-sizing: border-box;
+  padding: 1px;
+  clear: both;
+  position: relative;
+  .bottom-right {
+    right: 0;
+    bottom: 0;
+  }
+  a {
+    color: #fff;
+    text-decoration: underline;
+    &:hover, &:active, &:focus, &:visited{
+      color: #000 !important;
+      text-decoration: none !important;
+    }
+  }
+  img {
+    max-width: 1312px;
+    max-height: 361px;
+    @include breakpoint(xs) {
+      max-height: 190px;
+    }
+  }
+  .blurb {
+    position: inherit;
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    padding: 1.2em;
+    margin:1.2em;
+    width: 27.5em;
+    &.light{
+      background: none !important;
+      * {
+        color: #000 !important;
+      }
+    }
+    .b-cta{
+      margin-top: 1em;
+    }
+    .b-sub{
+      margin-top: 1.5em;
+    }
+    h1{
+      color: #fff;
+      padding: 0;
+      margin: 0;
+      font-size: 1.8em;
+    }
+    p{
+      margin: 0;
+      margin-top: 0.3em;
+    }
+    @include breakpoint(xs) {
+      width: 76%;
+    }
+  }
+  @include breakpoint(xs) {
+    min-height: 192px;
+    background-position:top !important;
+    background-size:contain !important;
+    padding:0;
+    padding-top:28%;
+    &.hide-xs-hero-img{
+      background-image:none !important;
+      min-height:inherit !important;
+      padding-top:0 !important;
+    }
+    .blurb{
+      width:auto;
+      max-width:100%;
+      margin:0;
+      color: #000000;
+      background-color: #ffffff;
+      padding-bottom: 0;
+      h1 {
+        color: #000000;
+      }
+    }
+  }
+}

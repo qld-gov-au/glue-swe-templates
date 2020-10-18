@@ -1,0 +1,124 @@
+/* ! section (side) navigation */
+
+#qg-content #qg-section-nav {
+  background-color: $qg-section-nav-bg-color;
+
+  h2 {
+    padding-left: 2.5em;
+    padding-top: 2.4em;
+    padding-bottom: 0.3em;
+    color: #000;
+    margin: 0;
+    @include rem(font-size, 19px);
+  }
+  a {
+    // color: $qg-blue-dark;
+  }
+
+  ul {
+    margin: 0;
+    padding: 0 0 ($qg-spacing-small * 0.7) 0;
+  }
+
+  li {
+    position: relative;
+    padding: 0;
+    transition: all 0.2s;
+    list-style-type: none;
+    @include rem(font-size, 14px);
+    font-weight: 700;
+
+    a {
+      display: block;
+      margin: 0;
+      padding: .7em 0 0.9em 10 + 15px;
+
+      color: $qg-blue-darker;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: none;
+      background-color: $qg-section-nav-link-hover-bg-color;
+    }
+
+    a.active, a.visited {
+      color: #FFF;
+      background-color: $qg-blue;
+    }
+
+    a:before {
+      position: absolute;
+      top: .95em;
+      left: 10px;
+
+      display: inline-block !important;
+      content: "\f054";
+      margin: 0;
+      padding: 0 0.3em 0 0;
+      text-decoration: none;
+      opacity: .5;
+
+      font-family: FontAwesome;
+      font-size: .9em;
+    }
+    a.active:before {
+      opacity: 1;
+    }
+    ul {  //nested nav styles
+      padding: 0;
+      li {
+        //margin-left: 3rem;
+        @include rem(margin-left, 30px);
+        a {
+          &:before {
+            content: "";
+          }
+        }
+      }
+    }
+  }
+
+  @include media-breakpoint-up(md) {
+    background-color: transparent;
+
+    h2, ul {
+      background-color: $qg-section-nav-bg-color
+    }
+
+    // h2 {
+    //   padding-bottom: $qg-spacing-xs-small;
+    //   padding-left: ($qg-spacing-xs / 2);
+    //   padding-right: ($qg-spacing-xs / 2);
+    // }
+    ul {
+      padding: 0 0 ($qg-spacing * 0.7) 0;
+    }
+    li {
+      a {
+        // padding: .7em ($qg-spacing/2) .7em ($qg-spacing + 15px);
+        padding-left: ($qg-spacing-xs / 2) + 15px;
+      }
+      a:before {
+        left: ($qg-spacing-xs / 2);
+      }
+    }
+  }
+  @include media-breakpoint-up(lg) {
+    // h2 {
+    //   padding: $qg-spacing $qg-spacing $qg-spacing-xs-small $qg-spacing;
+    // }
+    li {
+      a {
+        padding: .7em ($qg-spacing/2) .7em ($qg-spacing + 15px);
+      }
+      a:before {
+        left: ($qg-spacing);
+      }
+    }
+  }
+
+  @media print {
+    display: none;
+  }
+}

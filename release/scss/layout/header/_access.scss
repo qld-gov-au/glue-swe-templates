@@ -1,0 +1,43 @@
+#qg-access{
+	z-index: 1001;
+	width: 100%;
+	position: relative;
+	background: #444;
+
+	ul{
+		position: absolute;
+		display: inline-block;
+		width: 100%;
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+	li{
+		position: relative;
+		width: 100%;
+		list-style: none;
+	}
+	h1, h2{
+		font-size: 1em;
+	}
+	a, h1, h2{
+		// position: relative;
+		position: absolute;
+		top: 0;
+		left: -99999px;
+		width: 100%;
+		display: block;
+		margin: 1px 0;
+		padding: .5em 1em;
+		background: #444;
+		color: #fff;
+	}
+	a:focus, a:hover, h1:focus, h1:hover{
+		position: relative;
+		left: 0;
+		background: #000;
+	}
+}
+#qg-access:active{
+	background: pink;
+}

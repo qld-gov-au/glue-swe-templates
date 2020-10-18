@@ -1,0 +1,134 @@
+.header-location{
+    padding-top: 22px;
+    padding-right:12px;
+    position: relative;
+
+    .location-name {
+        pointer-events: none;
+        text-decoration: underline;
+    }
+
+    .fa-map-marker {
+        color: #fff;
+        font-size: 20px;
+        margin-left: 10px;
+    }
+
+    .dropdown-toggle {
+        background-color: transparent;
+        border: 0;
+        color: #fff;
+        padding: 0 0 0 5px;
+        transition: opacity .3s ease;
+
+        &:after {
+            display: none;
+        }
+
+        &:hover, &:focus {
+            opacity: .7;
+        }
+    }
+
+    &__title {
+        display: flex;
+    }
+
+    &__label {
+        color: #fff;
+    }
+
+    .qg-location-setter {
+        display: block;
+        opacity: 0;
+        transition: opacity .3s linear, visibility 0s linear .3s;
+        visibility: hidden;
+        width: 244px;
+
+        &.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        &.collapsing {
+            height: auto !important;
+            overflow: visible;
+            opacity: 1;
+            transition: opacity .3s linear;
+            visibility: visible;
+        }
+
+        &:before {
+            content: "";
+            position: absolute;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 0 4.5px 9px 4.5px;
+            border-color: transparent transparent #fff transparent;
+            top: -9px;
+            left: 173px;
+        }
+    }
+
+    @media (max-width: 1250px) and (min-width: 992px) {
+        .dropdown-menu:before {
+            left: 220px;
+        }
+    }
+
+    @include media-breakpoint-up(sm) {
+        .dropdown-menu {
+            left: -35px;
+            top: calc(100% + 10px);
+        }
+    }
+
+    @include media-breakpoint-down(sm) {
+        background-color: $qg-global-primary-light-grey;
+        width: 100%;
+        padding: 10px 0;
+
+        .header-location__title {
+            justify-content: center;
+        }
+
+        .dropdown-toggle {
+            color: #000;
+            order: 3;
+            margin-left: 3px;
+        }
+
+        .header-location__icon {
+            order: 1;
+            margin: 0 10px;
+            color: #000;
+        }
+
+        .header-location__label {
+            color: #000;
+            order: 2;
+        }
+
+        .qg-location-setter {
+            left:50%;
+            transform: translateX(-50%);
+            top: 100%;
+        }
+    }
+
+    @include media-breakpoint-down(xs) {
+        .header-location__title {
+            justify-content: flex-start;
+        }
+
+        .dropdown-menu {
+            left: 10px;
+            transform: none;
+
+            &:before {
+                left: 150px;
+            }
+        }
+    }
+}

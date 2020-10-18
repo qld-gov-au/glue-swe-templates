@@ -1,0 +1,117 @@
+
+    <div class="qg-aside qg-search">
+        <h2><span class="fa fa-search fa-2x" aria-hidden="true"></span>Search Queensland Government jobs</h2>
+
+        <form id="smartjob-search" action="https://smartjobs.qld.gov.au/jobtools/jncustomsearch.searchResults" method="get">
+            <ol class="questions">
+                <li>
+                  <div class="form-group">
+                    <label for="keyword"><span class="label">Keywords</span></label>
+                    <input id="keyword" name="in_skills" size="40" class="form-control">
+                  </div>
+                </li>
+
+                <li>
+                  <div class="form-group">
+                    <label for="location"><span class="label">Location</span></label>
+                    <select id="location" name="in_location" class="form-control">
+                      <option value="" selected="selected">All</option>
+                      <optgroup label="Brisbane">
+                        <option value="&quot;Brisbane&quot;">Brisbane</option>
+                        <option value="&quot;Brisbane - CBD&quot;">&nbsp; Brisbane&mdash;CBD</option>
+                        <option value="&quot;Brisbane - North&quot;">&nbsp; Brisbane&mdash;North</option>
+                        <option value="&quot;Brisbane - South&quot;">&nbsp; Brisbane&mdash;South</option>
+                        <option value="&quot;Brisbane - West&quot;">&nbsp; Brisbane&mdash;West</option>
+                      </optgroup>
+                      <option value="&quot;Sunshine Coast&quot;">Sunshine Coast</option>
+                      <option value="&quot;Gold Coast&quot;">Gold Coast</option>
+                      <option value="&quot;Ipswich&quot;">Ipswich</option>
+                      <option value="&quot;Logan&quot;">Logan</option>
+                      <option value="&quot;South West Qld&quot;">South West Qld</option>
+                      <option value="&quot;Wide Bay Burnett&quot;">Wide Bay Burnett</option>
+                      <option value="&quot;Rockhampton region&quot;">Rockhampton region</option>
+                      <option value="&quot;Central West Qld&quot;">Central West Qld</option>
+                      <option value="&quot;Mackay region&quot;">Mackay region</option>
+                      <option value="&quot;Toowoomba&quot;">Toowoomba</option>
+                      <option value="&quot;Townsville region&quot;">Townsville region</option>
+                      <option value="&quot;North West Qld&quot;">North West Qld</option>
+                      <option value="&quot;Cairns and Far North Qld&quot;">Cairns and Far North Qld</option>
+                      <option value="&quot;Other - Outside Qld&quot;">Other&mdash;Outside Qld</option>
+                    </select>
+                  </div>
+                </li>
+
+                <li>
+                  <div class="form-group">
+                    <label for="occupation"><span class="label">Occupational group</span></label>
+                    <input type="hidden" name="in_multi01_id" value="1108" class="form-control">
+                    <select class="form-control" id="occupation" name="in_multi01">
+                      <option value="" selected="selected">All</option>
+                      <option value="&quot;1&quot;">Accounting and finance</option>
+                      <option value="&quot;2&quot;">Administration</option>
+                      <option value="&quot;3&quot;">Apprenticeships and traineeships</option>
+                      <option value="&quot;4&quot;">Arts, culture and hHeritage</option>
+                      <option value="&quot;5&quot;">Auditing and compliance</option>
+                      <option value="&quot;6&quot;">Aviation&mdash;crew/engineer</option>
+                      <option value="&quot;46&quot;">Building services</option>
+                      <option value="&quot;7&quot;">Claims processing</option>
+                      <option value="&quot;8&quot;">Community care</option>
+                      <option value="&quot;9&quot;">Community engagement and education</option>
+                      <option value="&quot;10&quot;">Construction and architecture</option>
+                      <option value="&quot;11&quot;">Creative services and design</option>
+                      <option value="&quot;12&quot;">Customer service and call centre</option>
+                      <option value="&quot;13&quot;">Dentistry</option>
+                      <option value="&quot;14&quot;">Economics and statistics</option>
+                      <option value="&quot;15&quot;">Education and training</option>
+                      <option value="&quot;16&quot;">Emergency and protective services</option>
+                      <option value="&quot;17&quot;">Engineering and surveying</option>
+                      <option value="&quot;18&quot;">Executive</option>
+                      <option value="&quot;19&quot;">Facilities and asset management</option>
+                      <option value="&quot;20&quot;">Fishery and marine</option>
+                      <option value="&quot;21&quot;">Graduate</option>
+                      <option value="&quot;27&quot;">HR and Industrial Relations</option>
+                      <option value="&quot;22&quot;">Health&mdash;allied health and clinical support</option>
+                      <option value="&quot;23&quot;">Health&mdash;service support</option>
+                      <option value="&quot;24&quot;">Health&mdash;medical</option>
+                      <option value="&quot;25&quot;">Health&mdash;nursing</option>
+                      <option value="&quot;26&quot;">Health&mdash;science and technical</option>
+                      <option value="&quot;29&quot;">IT and telecommunications</option>
+                      <option value="&quot;28&quot;">Information management and library services</option>
+                      <option value="&quot;30&quot;">Justice and legal</option>
+                      <option value="&quot;31&quot;">Logistics and transport</option>
+                      <option value="&quot;32&quot;">Management</option>
+                      <option value="&quot;33&quot;">Marketing, PR and communication</option>
+                      <option value="&quot;33.5&quot;">Occupational health and safety</option>
+                      <option value="&quot;34&quot;">Policy and planning</option>
+                      <option value="&quot;35&quot;">Primary industry and environment</option>
+                      <option value="&quot;36&quot;">Procurement</option>
+                      <option value="&quot;37&quot;">Project management</option>
+                      <option value="&quot;38&quot;">Research</option>
+                      <option value="&quot;39&quot;">Sciences</option>
+                      <option value="&quot;47&quot;">Security</option>
+                      <option value="&quot;40&quot;">Services and hospitality</option>
+                      <option value="&quot;41&quot;">Sport and recreation</option>
+                      <option value="&quot;42&quot;">Trades</option>
+                      <option value="&quot;45&quot;">Valuer and property</option>
+                      <option value="&quot;43&quot;">Vehicle and machine operation</option>
+                      <option value="&quot;44&quot;">Volunteer</option>
+                  </select>
+                  </div>
+                </li>
+
+                <li class="footer">
+                    <input class="form-control" type="hidden" name="in_organid" value="14904">
+
+                    <ul class="actions">
+                        <li><strong><input class="form-control btn btn-primary" type="submit" value="Search"></strong></li>
+                    </ul>
+                </li>
+            </ol>
+        </form>
+
+        <ul>
+            <li><a href="https://smartjobs.qld.gov.au/jobtools/jncustomsearch.jobsearch?in_organid=14904">Advanced search</a></li>
+            <li><a href="https://smartjobs.qld.gov.au/jobtools/jncustomsearch.searchResults?in_organid=14904&amp;in_param1=90000">Executive/senior jobs</a></li>
+        </ul>
+    </div>
+

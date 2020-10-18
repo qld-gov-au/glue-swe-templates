@@ -1,0 +1,33 @@
+.pagination, .qg-pagination {
+  @extend .flex-wrap;
+  .prev, .next {
+    white-space: nowrap;
+  }
+  .page-link{
+    text-decoration: none !important;
+    border: 1px solid $qg-pagination-border !important;
+    .fa-angle-left {
+      padding-right: 9px;
+    }
+    .fa-angle-right {
+      padding-left: 9px;
+    }
+    &:focus, &:visited, &:link, &:active {
+      color: $qg-pagination-link-color !important;
+    }
+    @include media-breakpoint-down(md) {
+      padding: 0.3em 0.6em;
+    }
+  }
+  .page-item.disabled .page-link {
+    color: $qg-pagination-disabled-color !important;
+    pointer-events: none;
+    cursor: auto;
+    background-color: #fff;
+  }
+  .page-item.active .page-link{
+    background-color: $qg-pagination-link-color;
+    border-color: $qg-pagination-link-color;
+    color: #fff !important;
+  }
+}

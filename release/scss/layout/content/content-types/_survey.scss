@@ -1,0 +1,39 @@
+.qg-survey {
+  //@include status($fa-var-comments-o, $qgov-beige-light, $qgov-brown, $qgov-beige);
+  background-color: $qg-beige-light1;
+  color: $qg-dark-beige;
+  @include fonticon($fa-var-comments-o, 1, 4, 1, #000);
+
+  margin: 1rem auto;
+  //padding: 1em 2em 1em 5.125em;
+  @include rem(padding, 16px 32px 16px 82px);
+  position: relative;
+  overflow: hidden;
+  border: 1px solid $qg-beige-light;
+  &:before, &:hover:before {
+    position: absolute;
+    background: transparent;
+    color: $qg-brown;
+    left: 1.3rem;
+    top: 1.5rem;
+    @include rem(font-size, 40px);
+  }
+  * {
+    color: $qg-brown;
+  }
+
+  .qg-btn {
+    display: inline-block;
+    padding: 0.2rem 1.2rem;
+    background: $qg-mustard;
+    outline: 0;
+    border-radius: 25px;
+    color: #000;
+    line-height: 1.5em;
+    text-decoration: none;
+    float: right;
+    &:hover, &:focus, &:active {
+      background: $qg-mustard-dark;
+    }
+  }
+}

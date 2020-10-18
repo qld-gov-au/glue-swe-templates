@@ -1,0 +1,49 @@
+#qg-site-header, #qg-site-header:after, .qg-site-footer {
+    background-color: $qg-global-primary;
+}
+
+.btn-global-primary {
+    background-color: $qg-global-primary-dark;
+}
+
+.btn-global-primary-white {
+    color: $qg-global-primary-dark;
+}
+
+.qg-show-menu, .qg-show-search {
+    &[aria-expanded="true"] {
+        .fa {
+            color: $qg-global-primary;
+        }
+    }
+}
+
+.header-location .dropdown-menu p,
+.qg-location-setter-autocomplete ul li button,
+.qg-location-setter p,
+.qg-location-setter label {
+    color: $qg-global-primary-darker;
+}
+
+.qg-footer-feedback__close, .qg-location-setter-close {
+    &:hover, &:focus {
+        color: $qg-global-primary-dark;
+    }
+}
+
+@include media-breakpoint-down(sm) {
+    #qg-site-nav {
+
+		ul {
+            background-color: $qg-global-primary-light;
+        }
+
+        a, a:link, a:visited {
+            color: $qg-global-primary-darker;
+        }
+    }
+
+    .header-location {
+        background-color: $qg-global-primary-light;
+    }
+}

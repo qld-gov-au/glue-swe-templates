@@ -1,0 +1,30 @@
+.print-link-url{
+  display: none;
+}
+/*qg-grab class*/
+.qg-grab {
+  background-color: $qg-light-blue-gray3;
+  clear: both;
+  padding: 1.6rem 3.2rem;
+}
+
+a{
+  .meta{
+    display: inline-block;
+    text-decoration: none;
+  }
+}
+
+//table style
+.qg-table{
+  @extend .table;
+  thead > tr > th, thead > tr > td {
+    background-color: $qg-blue-dark;
+    color: #fff;
+  }
+}
+
+// datepicker prev and next button positioning
+.ui-datepicker .ui-datepicker-prev, .ui-datepicker .ui-datepicker-prev-hover, .ui-datepicker .ui-datepicker-next, .ui-datepicker .ui-datepicker-next-hover {
+  top: 8px !important;
+}

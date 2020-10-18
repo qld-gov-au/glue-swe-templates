@@ -1,0 +1,107 @@
+/*!
+ * Queensland Government Web Template (QG Web Template)
+ * -
+ * -
+ */
+
+// Variables
+// -------------------------
+@import "scss-general/qg-variables";
+@import "scss-general/qg-global-variables";
+@import "scss-general/qg-font-variables";
+//@import "scss-general/bootstrap-variables";
+
+// Frameworks
+// -------------------------
+@import "scss-general/bootstrap/rem";
+@import "scss-general/bootstrap/variables";
+@import "scss-general/bootstrap/bootstrap-imports";
+// the purpose of bridge_bootstrap3 is to make existing templates running on various apps to work with Bootstrap 4 updates
+@import "scss-general/bootstrap/bridge_bootstrap3";
+@import "../../../../node_modules/font-awesome/css/font-awesome";
+
+// Queensland government styles
+// -------------------------
+
+// QG Mixins
+@import "scss-general/mixins/font-size";
+@import "scss-general/mixins/qg-responsive-spacing";
+@import "scss-general/mixins/bootstrap-breakpoints";
+@import "scss-general/mixins/qg-style-helpers";
+
+// QG typography
+@import "layout/typography";
+
+// QG Utilities
+@import "utils/utilities"; // Utilities loaded first so they can be used in other components
+
+
+// QG components
+@import "components/accessibility/accessibility";
+@import "components/buttons";
+@import "components/carousel/carousel";
+@import "components/accordion/accordion";
+@import "components/forms/qg-forms";
+@import "components/pagination";
+@import "components/tables/tables";
+@import "components/visually-hidden";
+@import "components/gallery/qg-gallery";
+@import "components/dropdowns"; // Extends bootstrap dropdowns
+@import "components/navs"; // Extends bootstrap navs
+@import "components/images";
+@import "components/cards";
+@import "components/quick-exit/quick-exit";
+@import "components/alert";
+@import "components/search-widget/search-widget";
+@import "components/_correct-incorrect"; // Adds correct / incorrect styling
+@import "components/_misc";
+@import "components/fancybox";
+
+// QG layout components
+@import "layout/layout-scaffolding"; // Primary layout structure
+
+@import "layout/_pagemodels/index"; // Page models
+
+@import "layout/header/access";
+@import "layout/print";
+@import "layout/footer/site-footer";
+@import "layout/footer/legals";
+@import "layout/footer/service-centre";
+@import "layout/footer/footer-feedback";
+@import "layout/header/header-location";
+@import "layout/header/portal-links";
+@import "layout/header/mobile-menu-button";
+@import "layout/header/alerts";
+@import "layout/header/coat-of-arms";
+@import "layout/header/header-structure";
+@import "layout/header/site-name";
+@import "layout/header/site-search";
+@import "layout/header/site-nav";
+@import "layout/header/site-utilities";
+@import "layout/banners/qg-banner-blurb";
+
+@import "layout/breadcrumbs/breadcrumbs";
+@import "layout/content/content";
+@import "layout/content/location-setter";
+@import "layout/content/options";
+@import "layout/content/content-types";
+@import "layout/section-nav/section-nav";
+@import "layout/section-nav/guide-sub-nav";
+@import "layout/section-nav/mobile_step_nav";
+@import "layout/asides/asides";
+
+//themes
+@import "layout/_pagemodels/aggregation";
+@import "layout/_pagemodels/guide";
+
+//External Libraries
+@import "../lib/ext/butterfly/butterfly.css";
+
+// Legacy styles
+// -------------------------
+
+@import "legacy/forms/forms-reset";
+@import "legacy/forms/forms";
+
+// Colour pallet
+@import "scss-general/qg-global-theme";

@@ -1,0 +1,177 @@
+// ############################################
+// Primary styles
+
+.container-fluid.qg-site-width{
+  max-width: $qg-max-container-width;
+}
+
+#qg-primary-content {
+  @include qg-responsive-spacing(margin-top, full);
+  .dropup {
+    & > ul {
+      margin: 0;
+    }
+  }
+}
+
+// ############################################
+// Adaptable layout, with nav on left
+
+// Default layout
+#qg-primary-content {
+  @include make-col-ready();
+  @include make-col(12);
+  @extend .col-md-push-3;
+  @include media-breakpoint-up(md) {
+    @include make-col(6);
+  }
+}
+#qg-secondary-content {
+  @include make-col-ready();
+  @include make-col(12);
+  @extend .col-md-push-3;
+  @include media-breakpoint-up(md) {
+    @include make-col(3);
+  }
+}
+#qg-section-nav {
+  @include make-col-ready();
+  @include make-col(12);
+  @include media-breakpoint-up(md) {
+    @include make-col(3);
+  }
+  & + #qg-primary-content {
+    @include media-breakpoint-up(md) {
+      @include make-col(6);
+    }
+    @extend .col-md-push-0;
+  }
+
+  & ~ #qg-secondary-content {
+    @extend .col-md-push-0;
+  }
+}
+
+// Wide layout
+#qg-content.qg-wide {
+  #qg-primary-content {
+    @include make-col-ready();
+    @include make-col(12);
+    @extend .col-md-push-0;
+
+    & + #qg-secondary-content {
+      @extend .col-md-push-0;
+    }
+  }
+
+  // With aside
+  #qg-primary-content.qg-has-aside {
+    @include media-breakpoint-up(md) {
+      @include make-col(9);
+    }
+  }
+
+  // With nav
+  #qg-section-nav {
+    & + #qg-primary-content {
+      @include media-breakpoint-up(md) {
+        @include make-col(9);
+      }
+    }
+
+    // With nav AND aside
+    & + #qg-primary-content.qg-has-aside {
+      @include media-breakpoint-up(md) {
+        @include make-col(6);
+      }
+    }
+  }
+}
+
+// ############################################
+// Ignore gutters
+#qg-section-nav {
+  @include media-breakpoint-up(md) {
+    padding-left: 0;
+  }
+}
+
+#qg-content .row {
+  // Container above is needed because of #qg-three-col specificity
+  #qg-secondary-content {
+    padding-left: 0;
+    padding-right: 0;
+
+    @include media-breakpoint-up(lg) {
+      padding-left: $grid-gutter-width / 2;
+    }
+  }
+}
+
+// ############################################
+// Legacy non adaptable layout with nav on right
+
+// Three column layout (navigation, content, aside)
+#qg-one-col, #qg-three-col {
+  #qg-section-nav {
+    @extend .col-md-pull-9;
+  }
+
+  #qg-primary-content {
+    @extend .col-md-push-3;
+    @include media-breakpoint-up(md) {
+      @include make-col(6);
+    }
+  }
+
+  #qg-secondary-content {
+    display: block;
+  }
+}
+
+// Two column layout aside (content, aside)
+#qg-two-col-aside {
+  #qg-secondary-content {
+    display: block;
+  }
+}
+
+#qg-two-col-aside.wide {
+  #qg-primary-content {
+    @include media-breakpoint-up(md) {
+      @include make-col(9);
+    }
+    @extend .col-md-push-0;
+    @media (min-width: $screen-lg-min) {
+      padding-left: $grid-gutter-width !important;
+    }
+  }
+  #qg-secondary-content {
+    display: block;
+    @extend .col-md-push-0;
+  }
+}
+
+// Two column layout navigation (navigation, content)
+#qg-two-col-nav {
+  #qg-section-nav {
+    @extend .col-md-pull-9;
+  }
+  #qg-primary-content {
+    @include media-breakpoint-up(md) {
+      @include make-col(9);
+    }
+    @media (min-width: $screen-lg-min) {
+      padding-right: $grid-gutter-width !important;
+    }
+  }
+}
+// One column layout
+#qg-one-col.wide {
+  #qg-primary-content {
+    @include media-breakpoint-up(md) {
+      @include make-col(12);
+    }
+    @extend .col-md-push-0;
+  }
+}

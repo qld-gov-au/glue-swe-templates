@@ -1,0 +1,61 @@
+@mixin css-chevron-inline($chevron-size, $top: 50%) {
+  display: inline-block;
+  position: relative;
+
+  &:after {
+      content: ' ';
+      height: $chevron-size;
+      position: absolute;
+      top: $top;
+      transform: translateY(-50%) rotate(-45deg);
+      transition: all 0.3s ease;
+      width: $chevron-size;
+  }
+}
+
+@mixin css-chevron-inline-up($chevron-size, $colour, $top: 50%) {
+  @include css-chevron-inline($chevron-size, $top);
+  padding-right: 10px;
+
+  &:after {
+      border-bottom: 2px solid $colour;
+      border-left: 2px solid $colour;
+      right: 0;
+      transform: translateY(-50%) rotate(135deg);
+  }
+}
+
+@mixin css-chevron-inline-down($chevron-size, $colour, $offset, $top: 50%) {
+  @include css-chevron-inline($chevron-size, $top);
+  padding-right: 10px;
+
+  &:after {
+      border-bottom: 2px solid $colour;
+      border-left: 2px solid $colour;
+      right: $offset;
+  }
+}
+
+@mixin css-chevron-inline-right($chevron-size, $colour, $padding, $position, $top: 50%) {
+  @include css-chevron-inline($chevron-size, $top);
+
+  @if $position == before {
+    padding-left: $padding;
+
+    &:after {
+      border-bottom: 2px solid $colour;
+      border-right: 2px solid $colour;
+      left: 0;
+    }
+  } @else {
+    padding-right: $padding;
+
+    &:after {
+      border-bottom: 2px solid $colour;
+      border-right: 2px solid $colour;
+      right: 0;
+    }
+  }
+
+  
+}

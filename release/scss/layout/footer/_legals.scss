@@ -1,0 +1,72 @@
+.qg-legal {
+  @include rem(font-size, 14px);
+  padding: 80px 0;
+
+  ul {
+    margin: 0 0 0 10px;
+
+    li {
+      margin-bottom: 5px; 
+      padding-right: 8px;
+    }
+  }
+
+  .qg-copyright {
+    margin: 0;
+  }
+
+  @include media-breakpoint-down(md) {
+    ul {
+      margin-left: 35px;
+    }
+  }
+
+  @include media-breakpoint-down(sm) {
+    padding: 40px 0;
+
+    ul {
+      border-top: 1px solid rgba(255,255,255,0.25);
+      margin: 0 30px;
+      padding: 25px 0 20px;
+    }
+
+    .qg-copyright {
+      margin: 0 10px;
+    }
+  }
+
+  @media (max-width: 600px) {
+    padding: 0 0 30px;
+
+    ul {
+      margin: 10px 20px 0;
+      padding: 25px 0 20px;
+
+      li {
+        margin-bottom: 8px;
+      }
+    }
+
+    .qg-copyright {
+      margin: 0px;
+    }
+  }
+
+  @media print {
+    border-top: 1px solid black;
+
+    ul {
+      li {
+        display: block;
+
+        & + li a {
+          border-left: none;
+        }
+      }
+    }
+
+    .no-print {
+      display:none;
+    }
+  }
+}

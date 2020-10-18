@@ -1,0 +1,162 @@
+/*! //start call out styles  */
+.qg-callout__box {
+  @include make-row();
+  background-color: $qg-box-background;
+  clear: both;
+  width: 100%;
+  box-sizing: border-box;
+  margin: 25px auto;
+  padding: 0;
+  overflow: hidden;
+  &.qg-callout__grey-theme{
+    background-color: #f5f5f5;
+    border-left: 4px solid #808080;;
+  }
+  .qg-callout__bottom-alignment{
+    .qg-callout__cta{
+      margin-top: 25px;
+    }
+  }
+  .qg-callout__left-alignment, .qg-callout__right-alignment{
+    @extend .d-flex;
+    @extend .align-content-center;
+    @extend .align-items-center;
+    @include media-breakpoint-down(xs) {
+      flex-wrap:wrap;
+    }
+    .qg-callout__description{
+      @include media-breakpoint-up(sm) {
+        width: 90%;
+      }
+    }
+    .qg-callout__cta{
+      @include media-breakpoint-down(xs) {
+        margin-top: 25px;
+      }
+    }
+  }
+  .qg-callout__left-alignment{
+    @include media-breakpoint-up(sm) {
+      flex-direction: row-reverse
+    }
+    .qg-callout__description{
+      margin-left: 25px;
+      @include media-breakpoint-down(xs) {
+        margin-left: 0;
+      }
+    }
+    .qg-callout__cta{
+      margin-right: 0;
+      @extend .align-items-start;
+    }
+  }
+  .qg-callout__right-alignment{
+    .qg-callout__description{
+      margin-right: 25px;
+      @include media-breakpoint-down(xs) {
+        margin-right: 0;
+      }
+    }
+    .qg-callout__cta{
+      margin-right: 0;
+      @extend .align-items-end;
+    }
+  }
+  .qg-callout__header{
+    margin-top: 25px;
+    margin-bottom: 0;
+    .qg-callout__title{
+      margin-bottom: -10px;
+    }
+  }
+  .qg-callout__icon{
+    float:left;
+    height: 20px;
+    i{
+      vertical-align: top;
+    }
+  }
+  .qg-callout__content{
+    align-self: center;
+    *{
+      margin-bottom: 0;
+    }
+    margin-bottom: 25px;
+    margin-top: 25px;
+    & + .qg-callout__image{
+      @include media-breakpoint-down(sm) {
+        margin-bottom: 0;
+      }
+    }
+    @include media-breakpoint-down(sm) {
+      order: 2;
+    }
+  }
+  .qg-callout__image{
+    align-self: center;
+    @include media-breakpoint-down(xs) {
+      margin-top: 25px;
+    }
+    @include media-breakpoint-down(sm) {
+      order: 1;
+    }
+  }
+  .qg-callout__description{
+    ol, ul {
+      padding-left: 38px;
+    }
+  }
+  .qg-callout__icon{
+    font-size: 1.5rem;
+    margin-right: 10px;
+  }
+  .qg-callout__title{
+    margin-top: 0;
+  }
+  a.qg-btn {
+    float: left;
+    margin-right: 1em;
+    @include breakpoint($screen-sm-min) {
+      min-width: 8em;
+      margin-right: 2em;
+    }
+  }
+  p {
+    margin: 0;
+  }
+}
+
+//for backward compatibility
+.qg-call-out-box {
+  display: flex;
+  align-items: center;
+  background-color: $qg-box-background;
+  clear: both;
+  padding: 2em 1em;
+  width: 100%;
+  box-sizing: border-box;
+  margin: 0 auto;
+  overflow: hidden;
+  @include media-breakpoint-down(sm) {
+    align-items: start;
+    flex-direction: column-reverse;
+  }
+  a.qg-btn {
+    float: left;
+    margin-right: 1em;
+    @include media-breakpoint-down(sm) {
+      margin-top: 1em;
+    }
+    @include breakpoint($screen-sm-min) {
+      min-width: 8em;
+      margin-right: 2em;
+    }
+  }
+  p {
+    margin: 0;
+    @include media-breakpoint-down(sm) {
+      width: 100%;
+    }
+  }
+}
+/*! //end call out styles  */

@@ -1,0 +1,72 @@
+.qg-correct, .qg-incorrect {
+  position: relative;
+
+  margin: 0.4em 0;
+  padding: 15px 15px 15px 40px !important;
+
+  //border-style: solid;
+  border-width: 1px;
+  border-left-width: 7px;
+
+  vertical-align: top;
+
+  &:before {
+    aria-hidden: true;
+    position: absolute;
+    top: 8px;
+    left: 5px;
+    width: 30px;
+
+    font-family: FontAwesome;
+    font-size: 24px;
+    text-align: center;
+  }
+}
+
+.qg-correct {
+  border-color: $qg-correct-border-color;
+  background-color: $qg-correct-bg-color;
+
+  &:before {
+    content: "\f00c";
+    color: $qg-correct-color;
+  }
+}
+
+.qg-incorrect {
+  border-color: $qg-incorrect-border-color;
+  background-color: $qg-incorrect-bg-color;
+
+  &:before {
+    content: "\f00d";
+    color: $qg-incorrect-color;
+  }
+}
+
+span.qg-correct, span.qg-incorrect {
+  display: inline-block;
+  max-width: 48%;
+}
+
+.table > tbody > tr, table {
+  td.qg-correct {
+    @extend .qg-correct;
+  }
+  td.qg-incorrect {
+    @extend .qg-incorrect;
+  }
+  td.qg-correct, td.qg-incorrect {
+    border-left-width: 3px;
+  }
+}
+
+.table.qg-correct-incorrect > tbody > tr, table.qg-correct-incorrect {
+  td:nth-child(even) {
+    @extend .qg-correct;
+    border-left-width: 3px;
+  }
+  td:nth-child(odd) {
+    @extend .qg-incorrect;
+    border-left-width: 3px;
+  }
+}

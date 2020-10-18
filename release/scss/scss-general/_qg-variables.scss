@@ -1,0 +1,167 @@
+// #################################################
+// ## Colour definitions
+// Define colour names, avoid using these in the wider SCSS
+$black: #000000;
+
+// ## Primary blue ##
+$qg-blue: #007EB1; // Primary blue
+$qg-blue-dark: #13578b; // Primary link colour (see bootstrap-variables.scss), accordion expan/collapse
+$qg-blue-darker: #005375;
+
+$qg-light-green: #9AC02C;
+$qg-green: #78ba00;
+
+// ## Dark grey ##
+$qg-dark-grey-lightest: #949494;
+$qg-dark-gray-lighter: #8a8f91; // Lightest for large text on white
+$qg-dark-gray-light: #717679; // Lightest for small text on white
+$qg-dark-grey: #585e62; // For default buttons, accordion subtitles
+$qg-dark-grey1: #939393; // For default buttons
+$qg-dark-grey-dark: #4a4a4a;
+$qg-dark-grey-darker: #212529;
+
+// ## Light grey ##
+$qg-light-gray-lighter: #fafafa;
+$qg-light-gray-lighter1: #f9f9f9; //list box background
+$qg-light-gray: #f6f6f6; // Primary brand light grey
+$qg-light-gray-darker: #d1d1d1;
+$qg-grey-light: #f6f6f6; //Header light grey
+// $qg-light-gray-darker: #707070; // Dark grey
+
+$qg-purple: #7954a3;
+$qg-gold: #ffd200;
+
+// ## Red ##
+$qg-red: #F85C50;
+
+// ## Dark Blue ##
+$qg-dark-blue: #0B2E4C;
+$qg-dark-blue2: #005474;
+
+
+// ###################################
+
+// Light blue colours
+$qg-pale-blue-darker:	#cde8ec;
+$qg-pale-blue:			#e7f5fe;
+
+$qg-pale-blue-dark:		#cecece;
+$qg-pale-blue-light:	#f2f7f9;
+
+$qg-blueberry: #759BF3;
+
+
+//Other colours
+$qg-light-lime: #F2F7EA;
+$qg-lime: #9CBF6D;
+
+$qg-light-peach: #FFEDDE;
+$qg-peach: #f8ae70;
+
+$qg-light-watermelon: #FEECEF;
+$qg-watermelon: #EA6A7E;
+
+$qg-beige: #F5EBDC;
+$qg-dark-beige: #AE8446;
+$qg-beige-light: #faebcc;
+$qg-beige-light1: #fcf8e3;
+
+$qg-mustard: #F8D87B;
+$qg-mustard-dark: #f2cb58;
+
+$qg-brown: #8a6d3b;
+
+// #################################################
+// ## Semantic colour Variables
+// Semantic variables names common element colours. Use these in your SCSS
+// Note: Use US spelling for colour
+
+// ## Components
+$qg-icon-color: 		$qg-green;
+
+$brand-success:         #9ebf6d; // #5cb85c;
+$brand-info:            #1E77AA;
+$brand-warning:         #f9af71;
+$brand-danger:          #B90824; //#fff;
+
+$state-success-bg:      #f2f7ea;
+$state-success-border:  darken(adjust-hue($state-success-bg, -10), 5%) !default;
+$state-info-bg:      	#eff5f6;
+$state-info-border:  	darken(adjust-hue($state-success-bg, -10), 5%) !default;
+$state-warning-bg:      #ffedde;
+$state-warning-border:  darken(adjust-hue($state-success-bg, -10), 5%) !default;
+$state-danger-bg:       #B90824;
+$state-danger-border:   darken(adjust-hue($state-success-bg, -10), 5%) !default;
+
+// $qg-warning-color: #cc352d;
+$qg-correct-color: $qg-green;
+$qg-correct-border-color: #92c23a; // #a6c56d;
+$qg-correct-bg-color: #fafff2; // #fafff0; // #f7ffe8;
+
+$qg-incorrect-color: #d22d24; // #cc352d;
+$qg-incorrect-border-color: #d4534c; // #d06060;
+$qg-incorrect-bg-color: #fffafa; // #fff6f5; // #ffe2e0;
+
+
+// ## Layout
+// Site header
+$qg-breadcrumb-bg-color: $qg-blue;
+$qg-site-header-bg-color: $qg-light-gray;
+
+// Section Nav
+$qg-section-nav-bg-color: $qg-light-gray;
+$qg-section-nav-link-hover-bg-color: $qg-light-gray-darker;
+
+// Asides
+$qg-aside-bg-color: $qg-pale-blue;
+$qg-aside-bg-color2: $qg-pale-blue-light;
+$qg-aside-bg-color3: $qg-pale-blue-dark;
+$qg-aside-h2-color: $qg-dark-blue2;
+
+// Content options
+$qg-content-options-bg-color: $qg-blue;
+$qg-feedback-btn-bg-color: $qg-blue-darker;
+$qg-feedback-bg-color: $qg-light-gray-lighter;
+$qg-content-options-share-icon-color: #fff;
+// Note: Share dropdown uses colours from bootstrap
+
+// Footer
+$qg-footer-bg-color: $qg-dark-blue;
+$qg-footer-bg-alt-color: $qg-dark-blue;
+
+// ### Components ###
+// Navs
+// Tabs
+$qg-nav-tabs-link-hover-bg: $qg-dark-grey;
+$qg-nav-tabs-link-hover-color: #fff;
+
+// ###################################
+// Rulers & spacing
+
+$qg-max-container-width: 1327px;
+
+$qg-spacing: 50px; // Note: Used by $grid-gutter-width
+$qg-spacing-large: $qg-spacing * 1.5;
+$qg-spacing-small: $qg-spacing / 2;
+
+$qg-spacing-xs: 30px;
+$qg-spacing-xs-large: $qg-spacing-xs * 1.5;
+$qg-spacing-xs-small: $qg-spacing-xs / 2;
+
+
+// Notes:
+// $brand-danger = $qg-red5
+$qg-error-red: $qg-red;
+
+// #################################################
+// To convert to bootstrap naming convention
+$qg-light-blue-gray3: #EEF4F6;
+$qg-blue5: #115289;
+$qg-blue-green: #005375;
+//component variables
+$qg-box-background: $qg-light-blue-gray3;
+
+// pagination
+$qg-pagination-border: #808080;
+$qg-pagination-link-color: #13578B;
+$qg-pagination-disabled-color: #6c757d;
