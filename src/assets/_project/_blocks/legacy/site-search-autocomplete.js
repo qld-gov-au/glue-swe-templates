@@ -137,6 +137,10 @@ $(function () {
 
       userTyped = this.value;
 
+      if ($(form.elements.profile).filter('[name="profile"]').val() > 0) {
+        var profile = $(form.elements.profile).filter('[name="profile"]').val() || 'qld_preview';
+      }
+
       if (userTyped.length < 3) {
         closeSuggestions();
         return;

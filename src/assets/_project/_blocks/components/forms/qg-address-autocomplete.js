@@ -6,6 +6,7 @@ let qgInitAutocompleteAddress;
   let inputLocationId = 'qg-location-autocomplete';
   let addressSelection = false;
 
+  //Component
   const el = {
     $searchWidget: $('#qg-search-widget'),
     $autoComplete: $('.qg-location-autocomplete'),
@@ -13,6 +14,16 @@ let qgInitAutocompleteAddress;
     $longitude: $('#longitude'),
     $form: $('#qg-search-widget-form'),
   };
+
+  //Constants for google autocomplete results
+  const itemFull = $('.pac-container .pac-item:first').text();
+  const itemQuery = $('.pac-container .pac-item:first .pac-item-query').text();
+  const firstResult = itemQuery + ' ' + itemFull.substring(itemQuery.length);
+
+  //Error containers
+  var formContainer = $('.qg-fl');
+  var errorMessage = $('<p class="text-danger font-italic pt-2 pl-2">No result found</p>');
+  var errorHandler = $('<div class="error-handler"></div>');
 
   // getting and setting input fields value using query parameter
   var setsValue = function () {
@@ -44,6 +55,8 @@ let qgInitAutocompleteAddress;
       el.$searchWidget.find(el.$latitude).val('')
         .end()
         .find(el.$longitude).val('');
+    } else if (firstResult.length > 1) {
+      el.$autoComplete.val(firstResult);
     }
   });
   if ($('.' + inputLocationId).length > 0) {
@@ -116,13 +129,7 @@ let qgInitAutocompleteAddress;
         el.$form.find('.qg-location-autocomplete').keyup(function (e) {
           if ($(this).val().length > 1) {
             var reqReady = true;
-            var formContainer = $('.qg-fl');
-            var errorMessage = $('<p class="text-danger font-italic pt-2 pl-2">No result found</p>');
-            var errorHandler = $('<div class="error-handler"></div>');
             if (!$('.error-handler').length > 0) { errorHandler.insertAfter(formContainer); }
-            let itemFull = $('.pac-container .pac-item:first').text();
-            let itemQuery = $('.pac-container .pac-item:first .pac-item-query').text();
-            let firstResult = itemQuery + ' ' + itemFull.substring(itemQuery.length);
             if (e.keyCode === 13 || e.keyCode === 9) {
               e.preventDefault();
               if (firstResult.length > 1 && reqReady === true) {
