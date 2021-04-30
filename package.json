@@ -99,7 +99,7 @@
     "run-sequence": "^1.1.5",
     "sass-loader": "^6.0.5",
     "string-replace-loader": "^2.3.0",
-    "style-loader": "^0.17.0",
+    "style-loader": "^2.0.0",
     "terser-webpack-plugin": "^3.0.3",
     "url-loader": "^0.5.8",
     "vinyl-fs": "^3.0.3",
