@@ -104,7 +104,7 @@
     "url-loader": "^0.5.8",
     "vinyl-fs": "^3.0.3",
     "webpack": "^4.43.0",
-    "webpack-stream": "^5.2.1"
+    "webpack-stream": "^6.1.2"
   },
   "dependencies": {
     "@babel/runtime": "^7.10.5",
