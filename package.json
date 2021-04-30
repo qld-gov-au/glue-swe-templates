@@ -86,7 +86,7 @@
     "historyjs": "^1.8.0-b2",
     "html-loader": "^0.5.1",
     "html-webpack-plugin": "^2.28.0",
-    "image-webpack-loader": "^3.3.1",
+    "image-webpack-loader": "^7.0.1",
     "jest": "^24.9.0",
     "jest-puppeteer": "^4.4.0",
     "json-loader": "^0.5.7",
