@@ -1,5 +1,7 @@
 'use strict';
 
+const pjson = require('../../package.json');
+
 module.exports = function (gulp, plugins, config, dest, local = false, relpath = false) {
   return function (cb) {
     let src = [
@@ -7,8 +9,8 @@ module.exports = function (gulp, plugins, config, dest, local = false, relpath =
     ];
       //.concat(config.build.excludes); //remove concat excludes, remove from gulp-config.json also
     let cdnLink = {
-      regex: new RegExp(`="/assets/${config.versionName}`, 'g'),
-      replacement: `="https://static.qgov.net.au/assets/${config.versionName}`,
+      regex: new RegExp(`="/assets/${config.versionName}/latest`, 'g'),
+      replacement: `="https://static.qgov.net.au/assets/${config.versionName}/${pjson.version}`,
     };
     let folderNameChange = {
       regex: new RegExp(`="/assets/includes-local`, 'g'),
@@ -25,7 +27,7 @@ module.exports = function (gulp, plugins, config, dest, local = false, relpath =
     return gulp.src(src, { dot: true })
       .pipe(plugins.include({ hardFail: true }))
       .on('error', console.log)
-      .pipe(plugins.replace(projectAssets, `="$1assets/${config.versionName}/latest/`)) // Replace '_project' with 'v3'
+      .pipe(plugins.replace(projectAssets, `="$1assets/${config.versionName}/`)) // Replace '_project' with 'v4'
       .pipe(plugins.if(local !== true, plugins.replace(cdnLink.regex, cdnLink.replacement)))
       .pipe(plugins.if(local !== true, plugins.replace(folderNameChange.regex, folderNameChange.replacement)))
       .pipe(gulp.dest(`${config.basepath.build}/${dest}/`));
