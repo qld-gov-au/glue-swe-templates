@@ -43,7 +43,7 @@
     "debug": "^4.1.1",
     "del": "^2.2.2",
     "eslint": "^6.0.1",
-    "eslint-config-semistandard": "^7.0.0",
+    "eslint-config-semistandard": "^15.0.1",
     "eslint-config-standard": "^6.0.1",
     "eslint-html-reporter": "^0.5.2",
     "eslint-loader": "^1.4.1",
