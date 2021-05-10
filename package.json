@@ -62,7 +62,7 @@
     "gulp-concat": "^2.6.1",
     "gulp-connect": "^5.0.0",
     "gulp-connect-ssi": "^0.4.0",
-    "gulp-debug": "^3.1.0",
+    "gulp-debug": "^4.0.0",
     "gulp-directory-sync": "^1.2.3",
     "gulp-eslint": "^6.0.0",
     "gulp-foreach": "^0.1.0",
