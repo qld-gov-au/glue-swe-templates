@@ -52,7 +52,7 @@
     "eslint-plugin-standard": "^2.0.0",
     "event-stream": "^3.3.4",
     "extract-text-webpack-plugin": "^2.1.0",
-    "file-loader": "^2.0.0",
+    "file-loader": "^6.2.0",
     "font-awesome": "^4.7.0",
     "gh-pages": "^3.1.0",
     "git-hooks": "^1.1.8",
