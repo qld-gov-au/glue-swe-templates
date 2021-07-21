@@ -86,12 +86,6 @@
     margin-bottom: 1.5em;
   }
 }
-.qg-aside{
-  background-color: #fff !important;
-}
-.qg-aside h2{
-  display:none;
-}
 
 // results list styles
 .qg-search-results__results-list {
@@ -113,9 +107,6 @@
   .qg-search-results__url{
     word-wrap: break-word;
   }
-}
-.pagination-container{
-  margin-top: 3rem;
 }
 
 @media (min-width: 992px) {

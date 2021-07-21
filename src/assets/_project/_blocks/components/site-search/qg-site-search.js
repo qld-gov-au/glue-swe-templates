@@ -474,6 +474,6 @@ $(function () {
 
   // on load check if input has a value then display a close icon
   if (document.getElementsByClassName('qg-search-site__input')[1].value.length > 0){
-    $('.qg-search-close-concierge').removeClass('hide');
+    $('.qg-site-search__component').find('.qg-search-close-concierge').removeClass('hide');
   }
 });
